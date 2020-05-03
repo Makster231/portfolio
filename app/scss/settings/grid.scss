@@ -1,0 +1,46 @@
+﻿.mb-mob-0 {
+  @media (max-width: $md) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.js_hidden {
+  display: none !important;
+}
+
+.w-mobile--0 {
+  @media (max-width: $md) {
+    width: 0 !important;
+    min-width: 0 !important;
+  }
+}
+
+.mr-tablet--0 {
+  @media screen and (min-width: $md) and (max-width: $smaller-then-lg) {
+    margin-right: 0 !important;
+  }
+}
+.mr-desktop--0 {
+  @media (min-width: $lg) {
+    margin-right: 0 !important;
+  }
+}
+
+.hidden-then--md {
+  display: none !important;
+  @media (min-width: $md) {
+    display: block !important;
+  }
+}
+.hidden-then--lg {
+  display: none !important;
+  @media (min-width: $lg) {
+    display: block !important;
+  }
+}
+.visible-then--lg {
+  display: block !important;
+  @media (min-width: $lg) {
+    display: none !important;
+  }
+}

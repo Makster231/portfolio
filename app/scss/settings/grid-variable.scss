@@ -1,0 +1,13 @@
+﻿//Bootstrap 4: grid-variable:
+$xs: 375px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+//variable for (max-width):
+$smaller-then-xs: ($xs - 1);
+$smaller-then-sm: ($sm - 1);
+$smaller-then-md: ($md - 1);
+$smaller-then-lg: ($lg - 1);
+$smaller-then-xl: ($xl - 1);

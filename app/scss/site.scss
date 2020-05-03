@@ -1,0 +1,17 @@
+﻿//variables:
+@import "settings/reset";
+@import "settings/brand-color";
+@import "settings/grid-variable";
+@import "settings/grid";
+
+/* purgecss start ignore */
+//UI:
+@import "UI/btn";
+//Components:
+@import "components/general";
+@import "components/wrapper-page";
+
+@import "components/header-page";
+@import "components/footer-page";
+
+/* purgecss end ignore */
