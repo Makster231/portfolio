@@ -130,6 +130,9 @@ function scrollToSection(count) {
 
       if ($this.is(nav.costs)) {
         scrollToSection(2);
+        pages.costs.addClass("js_animation-costs");
+      } else {
+        pages.costs.removeClass("js_animation-costs");
       }
 
       if ($this.is(nav.contacts)) {
