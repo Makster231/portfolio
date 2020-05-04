@@ -64,6 +64,10 @@ function scrollToSection(count) {
 
     if (delta < 0) {
       if (nav.about.hasClass("js_active")) {
+        scrollToSection(3);
+        nav.about.removeClass("js_active");
+        nav.contacts.addClass("js_active");
+        pages.contacts.addClass("js_animation-contacts");
         return;
       }
 
@@ -116,6 +120,10 @@ function scrollToSection(count) {
       }
 
       if (nav.contacts.hasClass("js_active")) {
+        scrollToSection(0);
+        nav.contacts.removeClass("js_active");
+        nav.about.addClass("js_active");
+        pages.about.addClass("js_animation-about");
         return;
       }
     }
