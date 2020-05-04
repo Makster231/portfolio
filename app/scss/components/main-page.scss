@@ -1,0 +1,47 @@
+.main-page {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  transition: 0.75s ease;
+  width: 400vw;
+
+  &::after {
+    // content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+  }
+
+  &--section {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 60px;
+    box-sizing: border-box;
+
+    &.about-page {
+      background: url(../../images/main-bg.jpg) center no-repeat;
+      background-size: 100% 100%;
+    }
+
+    &.works-page {
+      background: red;
+      background-size: 100% 100%;
+    }
+
+    &.costs-page {
+      background: yellow;
+      background-size: 100% 100%;
+    }
+
+    &.contacts-page {
+      background: green;
+      background-size: 100% 100%;
+    }
+  }
+}

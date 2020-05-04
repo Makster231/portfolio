@@ -1,5 +1,60 @@
-@@include('_head.html')
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Портфолио</title>
+    <style>
+      body {
+        opacity: 0;
+      }
 
-<header class="entry">
-  
-</header>
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        body {
+          opacity: 1;
+        }
+      }
+    </style>
+    <meta name="Keywords" content="Портфолио, Максим Бархуш, Мохамед Бархуш, Сайт, Сайт Портфолио"> 
+    <meta name="Description" content="Это сайт портфолио">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600;700&family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="{{var_path_env}}css/site.css" rel="stylesheet" />
+
+    <!-- Favicons: -->
+    
+    <!-- /Favicons -->
+  </head>
+  <body id="js_body">
+    <div class="wrapper-page">
+      <header class="header container">
+        <div class="header-wrapper">
+          <div class="header-logo">
+            <img src="./images/logo.png" alt="Logo" />
+          </div>
+      
+          <ul class="header-nav">
+            <li class="js_nav-item js_nav-about js_active">
+              <p>
+                Обо Мне
+              </p>
+            </li>
+            <li class="js_nav-item js_nav-works">
+              <p>
+                Мои Работы
+              </p>
+            </li>
+            <li class="js_nav-item js_nav-costs">
+              <p>
+                Расценки
+              </p>
+            </li>
+            <li class="js_nav-item js_nav-contacts">
+              <p>
+                Контакты
+              </p>
+            </li>
+          </ul>
+        </div>
+      </header>
