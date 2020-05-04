@@ -7,7 +7,8 @@
 /* purgecss start ignore */
 //UI:
 @import "UI/keyframes";
-@import "UI/btn";
+@import "UI/fontello";
+@import "UI/fontello-codes";
 //Components:
 @import "components/general";
 @import "components/wrapper-page";
@@ -19,5 +20,6 @@
 @import "components/about-page";
 @import "components/works-page";
 @import "components/costs-page";
+@import "components/contacts-page";
 
 /* purgecss end ignore */

@@ -233,6 +233,67 @@ a { text-decoration: none; }
 
 .js_animation-costs .costs-block:nth-of-type(4) { animation: fade-in 0.1s linear 1.3s forwards; }
 
+@font-face { font-family: 'fontello'; src: url("../../font/fontello.eot?2362523"); src: url("../../font/fontello.eot?2362523#iefix") format("embedded-opentype"), url("../../font/fontello.woff2?2362523") format("woff2"), url("../../font/fontello.woff?2362523") format("woff"), url("../../font/fontello.ttf?2362523") format("truetype"), url("../../font/fontello.svg?2362523#fontello") format("svg"); font-weight: normal; font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/* @media screen and (-webkit-min-device-pixel-ratio:0) { @font-face { font-family: 'fontello'; src: url('../../font/fontello.svg?2362523#fontello') format('svg'); } } */
+[class^="icon-"]:before, [class*=" icon-"]:before { font-family: "fontello"; font-style: normal; font-weight: normal; speak: none; display: inline-block; text-decoration: inherit; width: 1em; margin-right: .2em; text-align: center; /* opacity: .8; */ /* For safety - reset parent styles, that can break glyph codes*/ font-variant: normal; text-transform: none; /* fix buttons height, for twitter bootstrap */ line-height: 1em; /* Animation center compensation - margins should be symmetric */ /* remove if not needed */ margin-left: .2em; /* you can be more comfortable with increased icons size */ /* font-size: 120%; */ /* Font smoothing. That was taken from TWBS */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* Uncomment for 3D effect */ /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-gmail:before { content: '\e800'; }
+
+/* '' */
+.icon-phone:before { content: '\e801'; }
+
+/* '' */
+.icon-ok-circled2:before { content: '\e802'; }
+
+/* '' */
+.icon-ok:before { content: '\e803'; }
+
+/* '' */
+.icon-github-circled:before { content: '\f09b'; }
+
+/* '' */
+.icon-instagram:before { content: '\f16d'; }
+
+/* '' */
+.icon-vkontakte:before { content: '\f189'; }
+
+/* '' */
+.icon-telegram:before { content: '\f2c6'; }
+
+/* '' */
+.icon-linkedin-squared:before { content: '\f30c'; }
+
+/* '' */
+.icon-gmail:before { content: '\e800'; }
+
+/* '' */
+.icon-phone:before { content: '\e801'; }
+
+/* '' */
+.icon-ok-circled2:before { content: '\e802'; }
+
+/* '' */
+.icon-ok:before { content: '\e803'; }
+
+/* '' */
+.icon-github-circled:before { content: '\f09b'; }
+
+/* '' */
+.icon-instagram:before { content: '\f16d'; }
+
+/* '' */
+.icon-vkontakte:before { content: '\f189'; }
+
+/* '' */
+.icon-telegram:before { content: '\f2c6'; }
+
+/* '' */
+.icon-linkedin-squared:before { content: '\f30c'; }
+
+/* '' */
 body { font-family: "Sarabun", sans-serif !important; color: #fff; overflow: hidden; font-size: 16px; letter-spacing: 1px; line-height: 1.3; }
 
 strong { font-weight: bold; }
@@ -344,6 +405,62 @@ img[data-object-fit="cover"] { object-fit: cover; }
 .costs-page .costs-block { position: relative; z-index: 5; display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; max-width: 750px; margin-left: auto; margin-right: auto; margin-bottom: 15px; }
 
 .costs-page .costs-block span:last-of-type { width: 200px; text-align: left; }
+
+.contacts-page--wrapper { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+.contacts-page .contacts-content { position: relative; z-index: 5; width: 100%; max-width: 380px; margin-left: auto; margin-right: auto; }
+
+.contacts-page .contacts-form { padding: 40px 20px; box-sizing: border-box; display: block; margin-bottom: 30px; background-color: rgba(0, 0, 0, 0.6); border-radius: 6px; }
+
+.contacts-page .contacts-links { display: flex; flex-direction: row; justify-content: center; align-items: center; }
+
+.contacts-page .contacts-links li { display: block; margin-left: 10px; }
+
+.contacts-page .contacts-links li:first-of-type { margin-left: 0; }
+
+.contacts-page .contacts-links li a { color: #fff; font-size: 22px; transition: 0.4s ease; }
+
+.contacts-page .contacts-links li a:hover { color: #324ea3; transform: scale(1.1); }
+
+.contacts-page .contacts-links li a:active { color: #203268; transition: 0s; }
+
+.contacts-page button { position: relative; width: 100%; border: none; outline: 0; background-color: rgba(255, 255, 255, 0.1); box-shadow: inset 0 0 2px 1px #324ea3; border-radius: 3px; color: #fff; transition: 0.4s ease; padding: 0; box-sizing: border-box; overflow: hidden; letter-spacing: 2px; }
+
+.contacts-page button span { position: relative; display: block; padding-top: 12px; box-sizing: border-box; padding-bottom: 12px; }
+
+.contacts-page button span::after { content: ""; position: absolute; left: 0; top: 101%; width: 100%; height: 1px; transition: 0.5s ease; background-color: #324ea3; }
+
+.contacts-page button span::before { content: ""; position: absolute; right: 0; bottom: 101%; width: 100%; height: 1px; transition: 0.4s ease; background-color: #324ea3; }
+
+.contacts-page button::after { content: ""; position: absolute; left: 100%; top: 0; width: 1px; height: 100%; transition: 0.4s ease; background-color: #324ea3; }
+
+.contacts-page button::before { content: ""; position: absolute; right: 100%; bottom: 0; width: 1px; height: 100%; transition: 0.4s ease; background-color: #324ea3; }
+
+.contacts-page button:hover { box-shadow: inset 0 0 8px 1px #4363c5; }
+
+.contacts-page button:hover::after { left: 1px; }
+
+.contacts-page button:hover::before { right: 0; }
+
+.contacts-page button:hover span::after { top: 1%; }
+
+.contacts-page button:hover span::before { bottom: 1%; }
+
+.contacts-page button:active { background-color: #324ea3; transition: 0s; box-shadow: none; }
+
+.contacts-page .form-group { display: flex; flex-direction: column; margin-bottom: 25px; }
+
+.contacts-page .form-group:last-of-type { margin-bottom: 40px; }
+
+.contacts-page .form-group label { display: block; margin-bottom: 6px; }
+
+.contacts-page .form-group label span { color: #5673cb; }
+
+.contacts-page .form-group textarea, .contacts-page .form-group input { width: 100%; display: block; border: 1px solid transparent; outline: 0; box-shadow: none; transition: 0.4s ease; padding: 12px 15px; border-radius: 3px; resize: none; font-size: 16px; line-height: 1; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.1); color: #fff; }
+
+.contacts-page .form-group textarea::placeholder, .contacts-page .form-group input::placeholder { font-size: 16px; line-height: 1; font-family: "Sarabun", sans-serif; }
+
+.contacts-page .form-group textarea:hover, .contacts-page .form-group textarea:focus, .contacts-page .form-group input:hover, .contacts-page .form-group input:focus { border-color: #324ea3; box-shadow: inset 0 0 2px 1px #324ea3; }
 
 /* purgecss end ignore */
 
