@@ -41,6 +41,7 @@
       transition: 0.4s ease;
       opacity: 0;
       margin-bottom: 4px;
+      text-transform: capitalize;
 
       &:last-of-type {
         margin-bottom: 0;
@@ -78,7 +79,7 @@
 
     &:hover {
       &::after {
-        background-color: rgba($black, 0.5);
+        background-color: rgba($black, 0.6);
       }
       &::before {
         opacity: 0;
