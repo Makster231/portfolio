@@ -1,0 +1,44 @@
+@keyframes search_scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.js_works-fade--in {
+  a:nth-of-type(10),
+  a:nth-of-type(1) {
+    animation: fade-in 0.3s linear 0.3s forwards;
+  }
+
+  a:nth-of-type(9),
+  a:nth-of-type(2) {
+    animation: fade-in 0.3s linear 0.6s forwards;
+  }
+  a:nth-of-type(8),
+  a:nth-of-type(3) {
+    animation: fade-in 0.3s linear 0.9s forwards;
+  }
+  a:nth-of-type(7),
+  a:nth-of-type(4) {
+    animation: fade-in 0.3s linear 1.2s forwards;
+  }
+  a:nth-of-type(6),
+  a:nth-of-type(5) {
+    animation: fade-in 0.3s linear 1.5s forwards;
+  }
+}

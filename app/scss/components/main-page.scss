@@ -25,23 +25,23 @@
     box-sizing: border-box;
 
     &.about-page {
-      background: url(../../images/main-bg.jpg) center no-repeat;
+      background: url(../../images/bg-about.jpg) center no-repeat;
       background-size: 100% 100%;
     }
 
     &.works-page {
-      background: red;
+      background: url(../../images/bg-works.jpg) center no-repeat;
       background-size: 100% 100%;
     }
 
     &.costs-page {
-      background: yellow;
+      background: url(../../images/bg-costs.jpg) center no-repeat;
       background-size: 100% 100%;
     }
 
     &.contacts-page {
-      background: green;
-      background-size: 100% 100%;
+      background: url(../../images/bg-contacts.jpg) center no-repeat;
+      background-size: cover;
     }
   }
 }
