@@ -25,6 +25,10 @@
     // wheelDelta не дает возможность узнать количество пикселей
     // onwheel || MozMousePixelScroll || onmousewheel
     var delta = e.deltaY || e.detail || e.wheelDelta;
+    pages.about.removeClass("js_animation-about");
+    pages.works.removeClass("js_animation-works");
+    pages.costs.removeClass("js_animation-costs");
+    pages.contacts.removeClass("js_animation-contacts");
 
     if (delta < 0) {
       if (nav.about.hasClass("js_active")) {
@@ -35,6 +39,7 @@
         scrollToSection(0);
         nav.works.removeClass("js_active");
         nav.about.addClass("js_active");
+        pages.about.addClass("js_animation-about");
         return;
       }
 
@@ -42,6 +47,7 @@
         scrollToSection(1);
         nav.costs.removeClass("js_active");
         nav.works.addClass("js_active");
+        pages.works.addClass("js_animation-works");
         return;
       }
 
@@ -49,6 +55,7 @@
         scrollToSection(2);
         nav.contacts.removeClass("js_active");
         nav.costs.addClass("js_active");
+        pages.costs.addClass("js_animation-costs");
         return;
       }
     } else {
@@ -56,6 +63,7 @@
         scrollToSection(1);
         nav.about.removeClass("js_active");
         nav.works.addClass("js_active");
+        pages.works.addClass("js_animation-works");
         return;
       }
 
@@ -63,6 +71,7 @@
         scrollToSection(2);
         nav.works.removeClass("js_active");
         nav.costs.addClass("js_active");
+        pages.costs.addClass("js_animation-costs");
         return;
       }
 
@@ -70,6 +79,7 @@
         scrollToSection(3);
         nav.costs.removeClass("js_active");
         nav.contacts.addClass("js_active");
+        pages.contacts.addClass("js_animation-contacts");
         return;
       }
 
