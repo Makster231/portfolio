@@ -28,6 +28,7 @@
       color: $blue;
       display: inline-flex;
       overflow: hidden;
+      font-weight: 800;
       &::before {
         content: "";
         position: absolute;
