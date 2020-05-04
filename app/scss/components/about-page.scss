@@ -9,10 +9,13 @@
 
   &--media,
   &--content {
-    width: 100%;
-    max-width: 750px;
     position: relative;
     z-index: 3;
+  }
+
+  &--content {
+    width: 100%;
+    max-width: 750px;
   }
 
   &--media {
@@ -23,6 +26,7 @@
     overflow: hidden;
     background: url(../../images/user.jpg) 35% bottom no-repeat;
     background-size: cover;
+    opacity: 0;
   }
 
   .about-content--skills {
@@ -34,6 +38,7 @@
     width: 100%;
     max-width: 575px;
     margin-left: auto;
+    opacity: 0;
     margin-right: auto;
 
     span {
@@ -44,6 +49,7 @@
       width: 100px;
       text-align: center;
       background-color: rgba($black, 0.75);
+      opacity: 0;
       border-radius: 5px;
     }
   }
@@ -51,11 +57,13 @@
   h1 {
     font-size: 32px;
     margin-bottom: 20px;
+    opacity: 0;
     text-align: center;
   }
 
   p {
     margin-bottom: 8px;
+    opacity: 0;
     text-align: center;
 
     &:last-of-type {

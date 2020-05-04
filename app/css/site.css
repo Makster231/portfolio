@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, head, title, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 /* make sure to set some focus styles for accessibility */
@@ -136,15 +137,72 @@ a { text-decoration: none; }
 @keyframes fade-in { from { opacity: 0; }
   to { opacity: 1; } }
 
-.js_works-fade--in a:nth-of-type(10), .js_works-fade--in a:nth-of-type(1) { animation: fade-in 0.3s linear 0.3s forwards; }
+@keyframes scale { from { transform: scale(0);
+    opacity: 0; }
+  to { transform: scale(1);
+    opacity: 1; } }
 
-.js_works-fade--in a:nth-of-type(9), .js_works-fade--in a:nth-of-type(2) { animation: fade-in 0.3s linear 0.6s forwards; }
+@keyframes slide-down { from { transform: translateY(-500px);
+    opacity: 0; }
+  to { transform: translateY(0);
+    opacity: 1; } }
 
-.js_works-fade--in a:nth-of-type(8), .js_works-fade--in a:nth-of-type(3) { animation: fade-in 0.3s linear 0.9s forwards; }
+@keyframes slide-up { from { transform: translateY(500px);
+    opacity: 0; }
+  to { transform: translateY(0);
+    opacity: 1; } }
 
-.js_works-fade--in a:nth-of-type(7), .js_works-fade--in a:nth-of-type(4) { animation: fade-in 0.3s linear 1.2s forwards; }
+@keyframes slide-left { from { transform: translateX(-500px);
+    opacity: 0; }
+  to { transform: translateX(0);
+    opacity: 1; } }
 
-.js_works-fade--in a:nth-of-type(6), .js_works-fade--in a:nth-of-type(5) { animation: fade-in 0.3s linear 1.5s forwards; }
+@keyframes slide-right { from { transform: translateX(500px);
+    opacity: 0; }
+  to { transform: translateX(0);
+    opacity: 1; } }
+
+/*  Анимации для секции "Обо Мне"*/
+.js_animation-about .about-page--media { animation: scale 0.8s linear 0s forwards; }
+
+.js_animation-about .about-page--content h1 { animation: slide-down 0.4s linear 0s forwards; }
+
+.js_animation-about .about-page--content p:nth-of-type(even) { animation: slide-left 0.4s linear 0.4s forwards; }
+
+.js_animation-about .about-page--content p:nth-of-type(odd) { animation: slide-right 0.4s linear 0.4s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills { animation: slide-up 0.4s linear 0s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(1) { animation: fade-in 0.2s linear 0.6s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(2) { animation: fade-in 0.2s linear 0.7s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(3) { animation: fade-in 0.2s linear 0.8s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(4) { animation: fade-in 0.2s linear 0.9s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(5) { animation: fade-in 0.2s linear 1s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(10) { animation: fade-in 0.2s linear 1.1s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(9) { animation: fade-in 0.2s linear 1.2s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(8) { animation: fade-in 0.2s linear 1.3s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(7) { animation: fade-in 0.2s linear 1.4s forwards; }
+
+.js_animation-about .about-page--content .about-content--skills span:nth-of-type(6) { animation: fade-in 0.2s linear 1.5s forwards; }
+
+/*  Анимации для секции "Мои Работы"*/
+.js_animation-works a:nth-of-type(10), .js_animation-works a:nth-of-type(1) { animation: fade-in 0.2s linear 0s forwards; }
+
+.js_animation-works a:nth-of-type(9), .js_animation-works a:nth-of-type(2) { animation: fade-in 0.2s linear 0.2s forwards; }
+
+.js_animation-works a:nth-of-type(8), .js_animation-works a:nth-of-type(3) { animation: fade-in 0.2s linear 0.4s forwards; }
+
+.js_animation-works a:nth-of-type(7), .js_animation-works a:nth-of-type(4) { animation: fade-in 0.2s linear 0.6s forwards; }
+
+.js_animation-works a:nth-of-type(6), .js_animation-works a:nth-of-type(5) { animation: fade-in 0.2s linear 0.8s forwards; }
 
 body { font-family: "Sarabun", sans-serif !important; color: #fff; overflow: hidden; font-size: 16px; letter-spacing: 1px; line-height: 1.3; }
 
@@ -194,17 +252,19 @@ img { width: 100%; max-width: 100%; object-fit: cover; }
 
 .about-page--wrapper { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 
-.about-page--media, .about-page--content { width: 100%; max-width: 750px; position: relative; z-index: 3; }
+.about-page--media, .about-page--content { position: relative; z-index: 3; }
 
-.about-page--media { width: 225px; height: 225px; margin-bottom: 20px; border-radius: 50%; overflow: hidden; background: url(../../images/user.jpg) 35% bottom no-repeat; background-size: cover; }
+.about-page--content { width: 100%; max-width: 750px; }
 
-.about-page .about-content--skills { display: flex; flex-direction: row; justify-content: space-around; align-items: center; flex-wrap: wrap; width: 100%; max-width: 575px; margin-left: auto; margin-right: auto; }
+.about-page--media { width: 225px; height: 225px; margin-bottom: 20px; border-radius: 50%; overflow: hidden; background: url(../../images/user.jpg) 35% bottom no-repeat; background-size: cover; opacity: 0; }
 
-.about-page .about-content--skills span { display: block; margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; width: 100px; text-align: center; background-color: rgba(0, 0, 0, 0.75); border-radius: 5px; }
+.about-page .about-content--skills { display: flex; flex-direction: row; justify-content: space-around; align-items: center; flex-wrap: wrap; width: 100%; max-width: 575px; margin-left: auto; opacity: 0; margin-right: auto; }
 
-.about-page h1 { font-size: 32px; margin-bottom: 20px; text-align: center; }
+.about-page .about-content--skills span { display: block; margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; width: 100px; text-align: center; background-color: rgba(0, 0, 0, 0.75); opacity: 0; border-radius: 5px; }
 
-.about-page p { margin-bottom: 8px; text-align: center; }
+.about-page h1 { font-size: 32px; margin-bottom: 20px; opacity: 0; text-align: center; }
+
+.about-page p { margin-bottom: 8px; opacity: 0; text-align: center; }
 
 .about-page p:last-of-type { margin-bottom: 20px; }
 
