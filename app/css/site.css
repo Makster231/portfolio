@@ -130,10 +130,6 @@ a { text-decoration: none; }
 .container { position: relative; width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; }
 
 /* purgecss start ignore */
-@keyframes search_scale { 0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); } }
-
 @keyframes fade-in { from { opacity: 0; }
   to { opacity: 1; } }
 
@@ -245,6 +241,8 @@ b { font-weight: 600; }
 
 img { width: 100%; max-width: 100%; object-fit: cover; }
 
+img[data-object-fit="cover"] { object-fit: cover; }
+
 .wrapper-page { min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
 
 .wrapper-page > * { width: 100%; }
@@ -307,13 +305,13 @@ img { width: 100%; max-width: 100%; object-fit: cover; }
 
 .works-page--project img { position: absolute; left: 0; right: 0; top: 0; bottom: 0; transition: 0.4s ease; height: 100%; }
 
-.works-page--project p { z-index: 5; color: #fff; transition: 0.4s ease; opacity: 0; margin-bottom: 4px; text-transform: capitalize; }
+.works-page--project p { position: relative; z-index: 5; color: #fff; transition: 0.4s ease; opacity: 0; margin-bottom: 4px; text-transform: capitalize; }
 
 .works-page--project p:last-of-type { margin-bottom: 0; }
 
 .works-page--project::after { content: ""; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; transition: 0.4s ease; background-color: rgba(0, 0, 0, 0.3); z-index: 0; }
 
-.works-page--project::before { content: ""; position: absolute; left: calc(50% - 10px); top: calc(50% - 10px); width: 20px; height: 20px; transition: 0.4s ease; background: url(../../images/icon-search.png) center no-repeat; background-size: contain; animation: search_scale 4s ease-in-out 0s infinite; z-index: 2; }
+.works-page--project::before { content: ""; position: absolute; left: calc(50% - 10px); top: calc(50% - 10px); width: 20px; height: 20px; transition: 0.4s ease; background: url(../../images/icon-search.png) center no-repeat; background-size: contain; z-index: 2; }
 
 .works-page--project:hover::after { background-color: rgba(0, 0, 0, 0.6); }
 

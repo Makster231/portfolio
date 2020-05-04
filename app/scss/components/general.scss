@@ -19,4 +19,7 @@ img {
   width: 100%;
   max-width: 100%;
   object-fit: cover;
+  &[data-object-fit="cover"] {
+    object-fit: cover;
+  }
 }

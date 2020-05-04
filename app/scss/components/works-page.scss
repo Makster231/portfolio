@@ -36,6 +36,7 @@
     }
 
     p {
+      position: relative;
       z-index: 5;
       color: $white;
       transition: 0.4s ease;
@@ -72,8 +73,6 @@
       transition: 0.4s ease;
       background: url(../../images/icon-search.png) center no-repeat;
       background-size: contain;
-      animation: search_scale 4s ease-in-out 0s infinite;
-
       z-index: 2;
     }
 
