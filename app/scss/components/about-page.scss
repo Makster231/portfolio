@@ -2,12 +2,64 @@
   &--wrapper {
     height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  h1{
-    
+  &--media,
+  &--content {
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+    z-index: 3;
+  }
+
+  &--media {
+    width: 225px;
+    height: 225px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: url(../../images/user.jpg) 35% bottom no-repeat;
+    background-size: cover;
+  }
+
+  .about-content--skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 575px;
+    margin-left: auto;
+    margin-right: auto;
+
+    span {
+      display: block;
+      margin-bottom: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100px;
+      text-align: center;
+      background-color: rgba($black, 0.75);
+      border-radius: 5px;
+    }
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: 8px;
+    text-align: center;
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
   }
 }

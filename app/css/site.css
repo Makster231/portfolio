@@ -129,7 +129,7 @@ a { text-decoration: none; }
 .container { position: relative; width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; }
 
 /* purgecss start ignore */
-body { font-family: "Sarabun", sans-serif !important; color: #fff; overflow: hidden; font-size: 16px; letter-spacing: 1px; }
+body { font-family: "Sarabun", sans-serif !important; color: #fff; overflow: hidden; font-size: 16px; letter-spacing: 1px; line-height: 1.3; }
 
 strong { font-weight: bold; }
 
@@ -147,7 +147,9 @@ img { width: 100%; max-width: 100%; object-fit: cover; }
 
 .header-wrapper { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
 
-.header-logo { display: block; width: 120px; }
+.header-logo { display: block; width: 60px; height: 60px; line-height: 54px; box-sizing: border-box; border: 3px solid #000; border-color: #fff #000; border-radius: 50%; text-align: center; transition: 0.4s ease; animation: logo_rotate 4s ease-in-out 0s infinite; box-shadow: inset 0 0 8px 2px white, 0 0 8px 2px rgba(0, 0, 0, 0.75), inset 0 0 8px 2px white, 0 0 8px 2px rgba(0, 0, 0, 0.75); }
+
+.header-logo p { font-size: 22px; letter-spacing: 1px; }
 
 .header-nav { display: flex; flex-direction: row; }
 
@@ -159,9 +161,13 @@ img { width: 100%; max-width: 100%; object-fit: cover; }
 
 .header-nav li.js_active::after { left: 0; }
 
+@keyframes logo_rotate { 0% { transform: rotate(-20deg); }
+  50% { transform: rotate(20deg); }
+  100% { transform: rotate(-20deg); } }
+
 .main-page { position: relative; display: flex; flex-direction: row; transition: 0.75s ease; width: 400vw; }
 
-.main-page::after { position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.75); z-index: 0; }
+.main-page::after { content: ""; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 0; }
 
 .main-page--section { width: 100vw; height: 100vh; padding-top: 60px; box-sizing: border-box; }
 
@@ -173,7 +179,21 @@ img { width: 100%; max-width: 100%; object-fit: cover; }
 
 .main-page--section.contacts-page { background: green; background-size: 100% 100%; }
 
-.about-page--wrapper { height: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; }
+.about-page--wrapper { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+.about-page--media, .about-page--content { width: 100%; max-width: 750px; position: relative; z-index: 3; }
+
+.about-page--media { width: 225px; height: 225px; margin-bottom: 20px; border-radius: 50%; overflow: hidden; background: url(../../images/user.jpg) 35% bottom no-repeat; background-size: cover; }
+
+.about-page .about-content--skills { display: flex; flex-direction: row; justify-content: space-around; align-items: center; flex-wrap: wrap; width: 100%; max-width: 575px; margin-left: auto; margin-right: auto; }
+
+.about-page .about-content--skills span { display: block; margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; width: 100px; text-align: center; background-color: rgba(0, 0, 0, 0.75); border-radius: 5px; }
+
+.about-page h1 { font-size: 32px; margin-bottom: 20px; text-align: center; }
+
+.about-page p { margin-bottom: 8px; text-align: center; }
+
+.about-page p:last-of-type { margin-bottom: 20px; }
 
 /* purgecss end ignore */
 
