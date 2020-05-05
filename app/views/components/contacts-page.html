@@ -3,45 +3,60 @@
 >
   <div class="contacts-page--wrapper container">
     <div class="contacts-content">
-      <form class="contacts-form">
-        <div class="form-group">
-          <label for="name">Ваше Имя<span>*</span></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Ваше Имя"
-          />
-        </div>
-        <div class="form-group">
-          <label for="email">Ваш E-mail<span>*</span></label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Ваш E-mail"
-          />
-        </div>
-        <div class="form-group">
-          <textarea
-            id="textarea"
-            name="textarea"
-            cols="30"
-            rows="6"
-            placeholder="Ваше Соощение"
-          ></textarea>
+      <form class="contacts-form js_form">
+        <div class="contacts-form--content">
+          <div class="form-group">
+            <label for="name">Ваше Имя<span>*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Ваше Имя"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Ваш E-mail<span>*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Ваш E-mail"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="textarea"
+              name="textarea"
+              cols="30"
+              rows="6"
+              class="form-control"
+              placeholder="Ваше Соощение"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="js_form-submit">
+            <span>
+              Отправить
+            </span>
+          </button>
         </div>
 
-        <button type="submit" class="js_form-submit">
-          <span>
-            Отправить
-          </span>
-        </button>
+        <div class="contacts-form--success">
+          <h1>
+            Письмо Отправлено ! <br />
+            Я свяжусь с вами в ближайшее время
+          </h1>
+        </div>
       </form>
 
       <ul class="contacts-links">
         <li>
-          <a href="https://github.com/Makster231?tab=repositories" target="_blank">
+          <a
+            href="https://github.com/Makster231?tab=repositories"
+            target="_blank"
+          >
             <i class="icon-github-circled"></i>
           </a>
         </li>
@@ -56,7 +71,10 @@
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/maksim-barhush-0819a11a6/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/maksim-barhush-0819a11a6/"
+            target="_blank"
+          >
             <i class="icon-linkedin-squared"></i>
           </a>
         </li>

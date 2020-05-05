@@ -142,6 +142,16 @@
   }
 }
 
+@keyframes button_loader {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
 /*  Анимация Логтотипа*/
 .animation-logo--border {
   animation: logo_border 25s linear 0s infinite;

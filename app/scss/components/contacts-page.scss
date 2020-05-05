@@ -16,6 +16,10 @@
     margin-right: auto;
   }
 
+  .contacts-form--success {
+    display: none;
+  }
+
   .contacts-form {
     padding: 40px 20px;
     box-sizing: border-box;
@@ -23,30 +27,13 @@
     margin-bottom: 30px;
     background-color: rgba($black, 0.6);
     border-radius: 6px;
-  }
 
-  .contacts-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    li {
-      display: block;
-      margin-left: 10px;
-      transition: 0.4s ease;
-
-      &:first-of-type {
-        margin-left: 0;
+    &.js_form-success {
+      .contacts-form--content {
+        display: none;
       }
-
-      &:hover {
-        transform: scale(1.4);
-      }
-
-      a {
-        color: $white;
-        font-size: 22px;
+      .contacts-form--success {
+        display: block;
       }
     }
   }
@@ -141,12 +128,34 @@
       transition: 0s;
       box-shadow: none;
     }
+
+    &.js_loader {
+      color: transparent;
+      box-shadow: inset 0 0 16px 1px lighten($blue, 10%);
+
+      &::after {
+        transition: 0s;
+        left: 0;
+        animation: button_loader 1s ease-in forwards;
+      }
+
+      &::before {
+        content: none;
+      }
+      span {
+        &::after,
+        &::before {
+          content: none;
+        }
+      }
+    }
   }
 
   .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    position: relative;
 
     &:last-of-type {
       margin-bottom: 40px;
@@ -188,6 +197,32 @@
       &:focus {
         border-color: $blue;
         box-shadow: inset 0 0 2px 1px rgba($blue, 1);
+      }
+    }
+  }
+
+  .contacts-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      display: block;
+      margin-left: 10px;
+      transition: 0.4s ease;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:hover {
+        transform: scale(1.4);
+      }
+
+      a {
+        color: $white;
+        font-size: 22px;
       }
     }
   }

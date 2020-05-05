@@ -5,10 +5,6 @@
 @import "settings/grid";
 
 /* purgecss start ignore */
-//UI:
-@import "UI/keyframes";
-@import "UI/fontello";
-@import "UI/fontello-codes";
 //Components:
 @import "components/general";
 @import "components/wrapper-page";
@@ -21,5 +17,10 @@
 @import "components/works-page";
 @import "components/costs-page";
 @import "components/contacts-page";
+//UI:
+@import "UI/keyframes";
+@import "UI/fontello";
+@import "UI/fontello-codes";
+@import "UI/form-validation";
 
 /* purgecss end ignore */

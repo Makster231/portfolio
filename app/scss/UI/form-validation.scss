@@ -1,0 +1,32 @@
+label.error {
+  font-weight: bold;
+  position: absolute;
+  font-size: 12px;
+  bottom: -15px;
+  left: 0;
+  color: lighten(red, 10%);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form-control {
+  &.error {
+    border-color: lighten(red, 10%) !important;
+    background-color: rgba(red, 0.05) !important;
+    box-shadow: inset 0 0 0 1px lighten(red, 10%) !important;
+  }
+}
+
+.form-group:not(.has-error) {
+  label.error {
+    display: none !important;
+  }
+}
+
+input.error:focus {
+  ~ label.error {
+    display: none !important;
+  }
+}
