@@ -4,6 +4,9 @@
   left: 12.5%;
   top: 0;
   z-index: 5;
+  @media (max-width: 1366px) {
+    left: 20px;
+  }
 
   &-wrapper {
     display: flex;
@@ -33,8 +36,6 @@
         font-weight: 600;
       }
     }
-
-    
   }
 
   &-nav {

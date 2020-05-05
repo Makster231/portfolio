@@ -129,6 +129,8 @@ a { text-decoration: none; }
 
 .container { position: relative; width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; }
 
+@media (max-width: 1366px) { .container { max-width: calc(100% - 40px); } }
+
 /* purgecss start ignore */
 body { font-family: "Sarabun", sans-serif !important; color: #fff; overflow: hidden; font-size: 16px; letter-spacing: 1px; line-height: 1.3; }
 
@@ -147,6 +149,8 @@ img[data-object-fit="cover"] { object-fit: cover; }
 .wrapper-page .main-page { flex: 1 0 auto; }
 
 .header { position: relative; position: fixed; left: 12.5%; top: 0; z-index: 5; }
+
+@media (max-width: 1366px) { .header { left: 20px; } }
 
 .header-wrapper { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
 
@@ -172,15 +176,17 @@ img[data-object-fit="cover"] { object-fit: cover; }
 
 .main-page::after { content: ""; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 0; }
 
-.main-page--section { width: 100vw; height: 100vh; padding-top: 60px; box-sizing: border-box; }
+.main-page--section { width: 100vw; height: 100vh; padding-top: 60px; box-sizing: border-box; background-size: 100% 100% !important; }
 
-.main-page--section.about-page { background: url(../../images/bg-about.jpg) center no-repeat; background-size: 100% 100%; }
+@media (max-width: 1366px) { .main-page--section { background-size: cover !important; } }
 
-.main-page--section.works-page { background: url(../../images/bg-works.jpg) center no-repeat; background-size: 100% 100%; }
+.main-page--section.about-page { background: url(../../images/bg-about.jpg) center no-repeat; }
 
-.main-page--section.costs-page { background: url(../../images/bg-costs.jpg) center no-repeat; background-size: 100% 100%; }
+.main-page--section.works-page { background: url(../../images/bg-works.jpg) center no-repeat; }
 
-.main-page--section.contacts-page { background: url(../../images/bg-contacts.jpg) center no-repeat; background-size: cover; }
+.main-page--section.costs-page { background: url(../../images/bg-costs.jpg) center no-repeat; }
+
+.main-page--section.contacts-page { background: url(../../images/bg-contacts.jpg) center no-repeat; }
 
 .about-page--wrapper { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 
@@ -483,7 +489,14 @@ img[data-object-fit="cover"] { object-fit: cover; }
 
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/* @media screen and (-webkit-min-device-pixel-ratio:0) { @font-face { font-family: 'fontello'; src: url('../../font/fontello.svg?2362523#fontello') format('svg'); } } */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../../font/fontello.svg?2362523#fontello') format('svg');
+  }
+}
+*/
 [class^="icon-"]:before, [class*=" icon-"]:before { font-family: "fontello"; font-style: normal; font-weight: normal; speak: none; display: inline-block; text-decoration: inherit; width: 1em; margin-right: .2em; text-align: center; /* opacity: .8; */ /* For safety - reset parent styles, that can break glyph codes*/ font-variant: normal; text-transform: none; /* fix buttons height, for twitter bootstrap */ line-height: 1em; /* Animation center compensation - margins should be symmetric */ /* remove if not needed */ margin-left: .2em; /* you can be more comfortable with increased icons size */ /* font-size: 120%; */ /* Font smoothing. That was taken from TWBS */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* Uncomment for 3D effect */ /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
 
 .icon-gmail:before { content: '\e800'; }

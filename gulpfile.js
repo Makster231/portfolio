@@ -68,6 +68,7 @@ const js_plugins = [
 	path.app.jsComponents + 'object-fit-polyfill.js',
 	path.app.jsComponents + 'vars.js',
 	path.app.jsComponents + 'page_scroll.js',
+	path.app.jsComponents + 'page_swipe.js',
 	path.app.jsComponents + 'nav.js',
 	path.app.jsComponents + 'form.js',
 	path.app.jsComponents + 'custom.js',
