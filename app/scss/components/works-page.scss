@@ -23,7 +23,20 @@
     margin-bottom: 15px;
     border-radius: 6px;
     cursor: pointer;
-    
+
+    @media (max-width: 1168px) and (min-height: 900px) {
+      height: 220px;
+      width: calc(33% - 15px);
+
+      &:last-of-type {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1168px) and (max-height: 900px) {
+      height: 220px;
+      width: calc(20% - 15px);
+    }
 
     img {
       position: absolute;

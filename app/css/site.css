@@ -210,6 +210,11 @@ img[data-object-fit="cover"] { object-fit: cover; }
 
 .works-page--project { display: flex; flex-direction: column; align-items: center; box-sizing: border-box; position: relative; z-index: 5; overflow: hidden; justify-content: center; width: calc(20% - 15px); height: 250px; margin-bottom: 15px; border-radius: 6px; cursor: pointer; }
 
+@media (max-width: 1168px) and (min-height: 900px) { .works-page--project { height: 220px; width: calc(33% - 15px); }
+  .works-page--project:last-of-type { display: none; } }
+
+@media (max-width: 1168px) and (max-height: 900px) { .works-page--project { height: 220px; width: calc(20% - 15px); } }
+
 .works-page--project img { position: absolute; left: 0; right: 0; top: 0; bottom: 0; transition: 0.4s ease; height: 100%; }
 
 .works-page--project p { position: relative; z-index: 5; color: #fff; transition: 0.4s ease; opacity: 0; margin-bottom: 4px; text-transform: capitalize; }
@@ -250,7 +255,11 @@ img[data-object-fit="cover"] { object-fit: cover; }
 
 .costs-page .costs-block { position: relative; z-index: 5; display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; max-width: 750px; margin-left: auto; margin-right: auto; margin-bottom: 15px; }
 
+@media (max-width: 960px) { .costs-page .costs-block { max-width: 650px; } }
+
 .costs-page .costs-block span:last-of-type { width: 200px; text-align: left; }
+
+@media (max-width: 960px) { .costs-page .costs-block span:last-of-type { width: 100px; } }
 
 .contacts-page--wrapper { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 
@@ -438,6 +447,16 @@ img[data-object-fit="cover"] { object-fit: cover; }
 .js_animation-works .works-page--project:nth-of-type(7), .js_animation-works .works-page--project:nth-of-type(4) { animation: fade-in 0.2s linear 0.8s forwards; }
 
 .js_animation-works .works-page--project:nth-of-type(6), .js_animation-works .works-page--project:nth-of-type(5) { animation: fade-in 0.2s linear 1s forwards; }
+
+@media (max-width: 960px) { .js_animation-works .works-page--project:nth-of-type(1) { animation: fade-in 0.2s linear 0.2s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(2) { animation: fade-in 0.2s linear 0.4s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(3) { animation: fade-in 0.2s linear 0.6s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(4) { animation: fade-in 0.2s linear 1.2s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(5) { animation: fade-in 0.2s linear 1s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(6) { animation: fade-in 0.2s linear 0.8s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(7) { animation: fade-in 0.2s linear 1.4s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(8) { animation: fade-in 0.2s linear 1.6s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(9) { animation: fade-in 0.2s linear 1.8s forwards; } }
 
 /*  Анимации для секции "Расценки"*/
 .js_animation-costs p { opacity: 0; animation: fade-in 0.2s linear 0.2s forwards; }

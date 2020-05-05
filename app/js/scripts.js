@@ -143,6 +143,10 @@ function scrollToSection(count) {
     var te = e.originalEvent.changedTouches[0].clientX;
     ts = Math.floor(ts);
     te = Math.floor(te);
+    pages.about.removeClass("js_animation-about");
+    pages.works.removeClass("js_animation-works");
+    pages.costs.removeClass("js_animation-costs");
+    pages.contacts.removeClass("js_animation-contacts");
 
     if (ts === te) {
       return;
