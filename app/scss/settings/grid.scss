@@ -8,4 +8,8 @@
   @media (max-width: 1366px) {
     max-width: calc(100% - 40px);
   }
+
+  @media (max-width: 640px) {
+    max-width: calc(100% - 30px);
+  }
 }
