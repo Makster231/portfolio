@@ -24,15 +24,15 @@
   }
 
   .contacts-form {
-    padding: 40px 20px;
     box-sizing: border-box;
     display: block;
     margin-bottom: 30px;
     background-color: rgba($black, 0.6);
     border-radius: 6px;
+    padding: 20px 10px;
 
-    @media (max-width: $md) {
-      padding: 20px 10px;
+    @media (min-width: $md) {
+      padding: 40px 20px;
     }
 
     &.js_form-success {
@@ -161,17 +161,17 @@
   .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
     position: relative;
+    margin-bottom: 20px;
 
-    @media (max-width: $md) {
-      margin-bottom: 20px;
+    @media (mi-width: $md) {
+      margin-bottom: 30px;
     }
 
     &:last-of-type {
-      margin-bottom: 40px;
-      @media (max-width: $md) {
-        margin-bottom: 30px;
+      margin-bottom: 30px;
+      @media (min-width: $md) {
+        margin-bottom: 40px;
       }
     }
 
@@ -192,7 +192,7 @@
       outline: 0;
       box-shadow: none;
       transition: 0.4s ease;
-      padding: 12px 15px;
+      padding: 10px;
       border-radius: 3px;
       resize: none;
       font-size: 16px;
@@ -213,8 +213,8 @@
         box-shadow: inset 0 0 2px 1px rgba($blue, 1);
       }
 
-      @media (max-width: $md) {
-        padding: 10px;
+      @media (min-width: $md) {
+        padding: 12px 15px;
       }
     }
   }

@@ -1,6 +1,8 @@
 .works-page {
-  @media (max-width: $md) {
-    padding-bottom: 35px;
+  padding-bottom: 35px;
+
+  @media (min-width: $md) {
+    padding-bottom: 0;
   }
   &--wrapper {
     height: 100%;
@@ -26,7 +28,6 @@
     margin-bottom: 15px;
     border-radius: 6px;
     cursor: pointer;
-
     @media (max-width: 1168px) and (min-height: 900px) {
       height: 220px;
       width: calc(33% - 15px);

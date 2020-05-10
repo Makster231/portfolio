@@ -20,21 +20,18 @@
 
   &--section {
     width: 100vw;
-    height: 100vh;
-    padding-bottom: 0;
-    padding-top: 60px;
     box-sizing: border-box;
-    background-size: 100% 100% !important;
+    height: 100%;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    background-size: cover !important;
 
-    @media (max-width: 1366px) {
-      background-size: cover !important;
-    }
-
-    @media (max-width: $md) {
-      height: 100%;
-      min-height: 100vh;
-      padding-top: 80px;
-      padding-bottom: 30px;
+    @media (min-width: $md) {
+      height: 100vh;
+      padding-top: 60px;
+      padding-bottom: 0;
+      min-height: auto;
     }
 
     &.about-page {
@@ -60,7 +57,7 @@
         background: url(../../images/bg-costs.jpg) center no-repeat;
       }
     }
-    
+
     &.contacts-page {
       background: url(../../images/bg-contacts--mobile.jpg) center no-repeat;
 
