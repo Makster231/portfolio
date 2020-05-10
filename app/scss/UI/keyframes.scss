@@ -255,6 +255,36 @@
         animation: fade-in 0.2s linear 1.8s forwards;
       }
     }
+
+    @media (max-width: $md) {
+      &:nth-of-type(1) {
+        animation: fade-in 0.1s linear 0.1s forwards;
+      }
+      &:nth-of-type(2) {
+        animation: fade-in 0.1s linear 0.2s forwards;
+      }
+      &:nth-of-type(3) {
+        animation: fade-in 0.1s linear 0.3s forwards;
+      }
+      &:nth-of-type(4) {
+        animation: fade-in 0.1s linear 0.4s forwards;
+      }
+      &:nth-of-type(5) {
+        animation: fade-in 0.1s linear 0.5s forwards;
+      }
+      &:nth-of-type(6) {
+        animation: fade-in 0.1s linear 0.6s forwards;
+      }
+      &:nth-of-type(7) {
+        animation: fade-in 0.1s linear 0.7s forwards;
+      }
+      &:nth-of-type(8) {
+        animation: fade-in 0.1s linear 0.8s forwards;
+      }
+      &:nth-of-type(9) {
+        animation: fade-in 0.1s linear 0.9s forwards;
+      }
+    }
   }
 }
 

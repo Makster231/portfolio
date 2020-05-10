@@ -14,9 +14,17 @@ const pages = {
   contacts: $(".js_page-contacts"),
 };
 
-
 function scrollToSection(count) {
   pages.main.css({
     transform: "translateX(-" + count * $(window).width() + "px)",
   });
+}
+
+function setHeight(section) {
+  if ($(window).width() < 640) {
+    $(document).scrollTop(0);
+    $("#js_body, .js_wrapper-page").css({
+      "max-height": section.outerHeight() + 30,
+    });
+  }
 }

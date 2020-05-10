@@ -31,6 +31,15 @@ function scrollToSection(count) {
   });
 }
 
+function setHeight(section) {
+  if ($(window).width() < 640) {
+    $(document).scrollTop(0);
+    $("#js_body, .js_wrapper-page").css({
+      "max-height": section.outerHeight() + 30
+    });
+  }
+}
+
 (function ($, window, document) {
   var elem = document.getElementById("js_body");
 
@@ -230,6 +239,7 @@ function scrollToSection(count) {
       $this.addClass("js_active");
 
       if ($this.is(nav.about)) {
+        setHeight($(".js_page-about"));
         scrollToSection(0);
         pages.about.addClass("js_animation-about");
       } else {
@@ -239,11 +249,13 @@ function scrollToSection(count) {
       if ($this.is(nav.works)) {
         scrollToSection(1);
         pages.works.addClass("js_animation-works");
+        setHeight($(".js_page-works"));
       } else {
         pages.works.removeClass("js_animation-works");
       }
 
       if ($this.is(nav.costs)) {
+        setHeight($(".js_page-costs"));
         scrollToSection(2);
         pages.costs.addClass("js_animation-costs");
       } else {
@@ -251,12 +263,17 @@ function scrollToSection(count) {
       }
 
       if ($this.is(nav.contacts)) {
+        setHeight($(".js_page-contacts"));
         scrollToSection(3);
+        pages.contacts.addClass("js_animation-contacts");
+      } else {
+        pages.contacts.removeClass("js_animation-contacts");
       }
     });
   }
 
   $(function () {
+    setHeight($(".js_page-about"));
     navPages();
   });
 })(window.jQuery, window, document);

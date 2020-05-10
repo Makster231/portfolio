@@ -1,11 +1,9 @@
 ﻿.wrapper-page {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-
+  overflow: hidden;
   @media (min-width: $md) {
-    overflow: hidden;
+    min-height: 100vh;
   }
 
   > * {

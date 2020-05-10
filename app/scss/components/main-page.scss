@@ -38,19 +38,35 @@
     }
 
     &.about-page {
-      background: url(../../images/bg-about.jpg) center no-repeat;
+      background: url(../../images/bg-about--mobile.jpg) center no-repeat;
+
+      @media (min-width: $md) {
+        background: url(../../images/bg-about.jpg) center no-repeat;
+      }
     }
 
     &.works-page {
-      background: url(../../images/bg-works.jpg) center no-repeat;
+      background: url(../../images/bg-works--mobile.jpg) center no-repeat;
+
+      @media (min-width: $md) {
+        background: url(../../images/bg-works.jpg) center no-repeat;
+      }
     }
 
     &.costs-page {
-      background: url(../../images/bg-costs.jpg) center no-repeat;
-    }
+      background: url(../../images/bg-costs--mobile.jpg) center no-repeat;
 
+      @media (min-width: $md) {
+        background: url(../../images/bg-costs.jpg) center no-repeat;
+      }
+    }
+    
     &.contacts-page {
-      background: url(../../images/bg-contacts.jpg) center no-repeat;
+      background: url(../../images/bg-contacts--mobile.jpg) center no-repeat;
+
+      @media (min-width: $md) {
+        background: url(../../images/bg-contacts.jpg) center no-repeat;
+      }
     }
   }
 }

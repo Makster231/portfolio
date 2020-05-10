@@ -1,4 +1,7 @@
 .contacts-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   &--wrapper {
     height: 100%;
     display: flex;

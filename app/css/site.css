@@ -146,9 +146,9 @@ img { width: 100%; max-width: 100%; object-fit: cover; }
 
 img[data-object-fit="cover"] { object-fit: cover; }
 
-.wrapper-page { min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+.wrapper-page { display: flex; flex-direction: column; overflow: hidden; }
 
-@media (min-width: 768px) { .wrapper-page { overflow: hidden; } }
+@media (min-width: 768px) { .wrapper-page { min-height: 100vh; } }
 
 .wrapper-page > * { width: 100%; }
 
@@ -170,11 +170,13 @@ img[data-object-fit="cover"] { object-fit: cover; }
 
 .header-nav { display: flex; flex-direction: row; }
 
-@media (max-width: 768px) { .header-nav { position: fixed; width: 100%; bottom: 0; box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.75); left: 0; } }
+@media (max-width: 768px) { .header-nav { position: fixed; transition: .4s ease; width: 100%; bottom: 0; box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.75); left: 0; } }
 
 .header-nav li { padding: 20px 10px; width: 120px; text-align: center; cursor: pointer; font-weight: 600; position: relative; overflow: hidden; }
 
-@media (max-width: 640px) { .header-nav li { padding: 10px 0; width: 25%; font-size: 12px; letter-spacing: -0.01rem; background-color: #000; } }
+@media (max-width: 768px) { .header-nav li { padding: 10px 0; width: 25%; font-size: 14px; letter-spacing: -0.01rem; background-color: #000; } }
+
+@media (max-width: 375px) { .header-nav li { font-size: 12px; } }
 
 .header-nav li::after { content: ""; position: absolute; left: -100%; bottom: 0; width: 100%; height: 2px; transition: 0.75s ease-in; background-color: #fff; }
 
@@ -196,13 +198,21 @@ img[data-object-fit="cover"] { object-fit: cover; }
 
 @media (max-width: 768px) { .main-page--section { height: 100%; min-height: 100vh; padding-top: 80px; padding-bottom: 30px; } }
 
-.main-page--section.about-page { background: url(../../images/bg-about.jpg) center no-repeat; }
+.main-page--section.about-page { background: url(../../images/bg-about--mobile.jpg) center no-repeat; }
 
-.main-page--section.works-page { background: url(../../images/bg-works.jpg) center no-repeat; }
+@media (min-width: 768px) { .main-page--section.about-page { background: url(../../images/bg-about.jpg) center no-repeat; } }
 
-.main-page--section.costs-page { background: url(../../images/bg-costs.jpg) center no-repeat; }
+.main-page--section.works-page { background: url(../../images/bg-works--mobile.jpg) center no-repeat; }
 
-.main-page--section.contacts-page { background: url(../../images/bg-contacts.jpg) center no-repeat; }
+@media (min-width: 768px) { .main-page--section.works-page { background: url(../../images/bg-works.jpg) center no-repeat; } }
+
+.main-page--section.costs-page { background: url(../../images/bg-costs--mobile.jpg) center no-repeat; }
+
+@media (min-width: 768px) { .main-page--section.costs-page { background: url(../../images/bg-costs.jpg) center no-repeat; } }
+
+.main-page--section.contacts-page { background: url(../../images/bg-contacts--mobile.jpg) center no-repeat; }
+
+@media (min-width: 768px) { .main-page--section.contacts-page { background: url(../../images/bg-contacts.jpg) center no-repeat; } }
 
 .about-page--wrapper { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 
@@ -297,6 +307,8 @@ img[data-object-fit="cover"] { object-fit: cover; }
 .costs-page .costs-block span:last-of-type { width: 200px; text-align: left; }
 
 @media (max-width: 960px) { .costs-page .costs-block span:last-of-type { width: 100px; } }
+
+.contacts-page { display: flex; flex-direction: row; align-items: center; }
 
 .contacts-page--wrapper { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 
@@ -502,6 +514,16 @@ img[data-object-fit="cover"] { object-fit: cover; }
   .js_animation-works .works-page--project:nth-of-type(7) { animation: fade-in 0.2s linear 1.4s forwards; }
   .js_animation-works .works-page--project:nth-of-type(8) { animation: fade-in 0.2s linear 1.6s forwards; }
   .js_animation-works .works-page--project:nth-of-type(9) { animation: fade-in 0.2s linear 1.8s forwards; } }
+
+@media (max-width: 768px) { .js_animation-works .works-page--project:nth-of-type(1) { animation: fade-in 0.1s linear 0.1s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(2) { animation: fade-in 0.1s linear 0.2s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(3) { animation: fade-in 0.1s linear 0.3s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(4) { animation: fade-in 0.1s linear 0.4s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(5) { animation: fade-in 0.1s linear 0.5s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(6) { animation: fade-in 0.1s linear 0.6s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(7) { animation: fade-in 0.1s linear 0.7s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(8) { animation: fade-in 0.1s linear 0.8s forwards; }
+  .js_animation-works .works-page--project:nth-of-type(9) { animation: fade-in 0.1s linear 0.9s forwards; } }
 
 /*  Анимации для секции "Расценки"*/
 .js_animation-costs p { opacity: 0; animation: fade-in 0.2s linear 0.2s forwards; }
