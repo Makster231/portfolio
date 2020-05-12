@@ -361,10 +361,10 @@
         color 4s linear 0.3s infinite;
     }
     li {
-      @for $i from 1 through 6 {
+      @for $i from 1 through 7 {
         &:nth-child(#{$i}) {
           a {
-            animation-delay: $i * (4s / 12);
+            animation-delay: $i * (4s / 14);
           }
         }
       }
