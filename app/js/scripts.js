@@ -468,6 +468,9 @@ function setHeight(section) {
 
       $form_btn.addClass("js_loader").attr("disabled", true);
       var data = $form.serialize();
+      setTimeout(function () {
+        $form.addClass("js_form-success");
+      }, 1000);
       $.ajax({
         type: "POST",
         url: "./mail.php",
