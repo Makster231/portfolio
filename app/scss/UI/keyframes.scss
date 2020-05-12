@@ -85,78 +85,6 @@
     opacity: 1;
   }
 }
-// @keyframes logo_border {
-//   0% {
-//     border-color: $blue $white $blue $blue;
-//     box-shadow: inset 0 0 8px 1px rgba($white, 0.3);
-//   }
-//   25% {
-//     border-color: $white $blue $white $white;
-//     box-shadow: inset 0 0 8px 1px $blue;
-//   }
-//   50% {
-//     border-color: $blue $white $blue $blue;
-//     box-shadow: inset 0 0 8px 1px rgba($white, 0.3);
-//   }
-//   75% {
-//     border-color: $white $blue $white $white;
-//     box-shadow: inset 0 0 8px 1px $blue;
-//   }
-//   100% {
-//     border-color: $blue $white $blue $blue;
-//     box-shadow: inset 0 0 8px 1px rgba($white, 0.3);
-//   }
-// }
-// @keyframes logo_paragraph {
-//   0% {
-//     color: $white;
-//   }
-//   25% {
-//     color: $blue;
-//   }
-//   50% {
-//     color: $white;
-//   }
-//   75% {
-//     color: $blue;
-//   }
-//   100% {
-//     color: $white;
-//   }
-// }
-// @keyframes logo_span {
-//   0% {
-//     color: $blue;
-//   }
-//   25% {
-//     color: $white;
-//   }
-//   50% {
-//     color: $blue;
-//   }
-//   75% {
-//     color: $white;
-//   }
-//   100% {
-//     color: $blue;
-//   }
-// }
-
-@keyframes logo {
-  0% {
-    border-color: $white $blue $white $white;
-  }
-  25% {
-    border-color: $white $white $blue $white;
-  }
-  50% {
-    border-color: $white $white $white $blue;
-  }
-  75% {
-    border-color: $blue $white $white $white;
-  }
-}
-
 @keyframes button_loader {
   from {
     width: 0;
@@ -164,6 +92,21 @@
 
   to {
     width: 100%;
+  }
+}
+
+@keyframes rotate_infinite {
+  0% {
+    transform: rotate(0deg);
+    border-color: transparent $blue transparent transparent;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-color: transparent $white transparent transparent;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: transparent $blue transparent transparent;
   }
 }
 
