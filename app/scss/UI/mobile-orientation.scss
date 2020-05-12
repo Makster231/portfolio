@@ -1,0 +1,21 @@
+@media screen and (max-width: $lg) and (orientation: landscape) {
+  footer,
+  header,
+  section {
+    display: none !important;
+  }
+
+  main {
+    background-color: $blue;
+    background-image: url(../../images/mobile-orientation.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    width: 100vw !important;
+    height: 100vh !important;
+    transform: none !important;
+    &::after {
+      content: none !important;
+    }
+  }
+}

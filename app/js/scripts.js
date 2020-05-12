@@ -1,5 +1,7 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 if ('objectFit' in document.documentElement.style === false) {
   document.addEventListener('DOMContentLoaded', function () {
     Array.prototype.forEach.call(document.querySelectorAll('img[data-object-fit]'), function (image) {
@@ -8,6 +10,127 @@ if ('objectFit' in document.documentElement.style === false) {
     });
   });
 }
+
+(function ($, window, document) {
+  $(".js_fancybox-valio").click(function () {
+    $.fancybox.open([{
+      src: "../../images/works/valio/1.jpg"
+    }, {
+      src: "../../images/works/valio/2.jpg"
+    }, {
+      src: "../../images/works/valio/3.jpg"
+    }, {
+      src: "../../images/works/valio/4.jpg"
+    }, {
+      src: "../../images/works/valio/5.jpg"
+    }, {
+      src: "../../images/works/valio/6.jpg"
+    }, {
+      src: "../../images/works/valio/7.jpg"
+    }, {
+      src: "../../images/works/valio/8.jpg"
+    }, {
+      src: "../../images/works/valio/9.jpg"
+    }, {
+      src: "../../images/works/valio/10.jpg"
+    }, {
+      src: "../../images/works/valio/11.jpg"
+    }, {
+      src: "../../images/works/valio/12.jpg"
+    }, {
+      src: "../../images/works/valio/13.jpg"
+    }, {
+      src: "../../images/works/valio/14.jpg"
+    }, {
+      src: "../../images/works/valio/15.jpg"
+    }, {
+      src: "../../images/works/valio/16.jpg"
+    }, {
+      src: "../../images/works/valio/17.jpg"
+    }, {
+      src: "../../images/works/valio/18.jpg"
+    }, {
+      src: "../../images/works/valio/19.jpg"
+    }, {
+      src: "../../images/works/valio/20.jpg"
+    }, {
+      src: "../../images/works/valio/21.jpg"
+    }, {
+      src: "../../images/works/valio/22.jpg"
+    }, {
+      src: "../../images/works/valio/23.jpg"
+    }, {
+      src: "../../images/works/valio/24.jpg"
+    }, {
+      src: "../../images/works/valio/25.jpg"
+    }, {
+      src: "../../images/works/valio/26.jpg"
+    }], {
+      touch: false,
+      loop: true
+    });
+  });
+  $(".js_fancybox-sberbank").click(function () {
+    $.fancybox.open([{
+      src: "../../images/works/sberbank/1.jpg"
+    }, {
+      src: "../../images/works/sberbank/2.jpg"
+    }, {
+      src: "../../images/works/sberbank/3.jpg"
+    }, {
+      src: "../../images/works/sberbank/4.jpg"
+    }, {
+      src: "../../images/works/sberbank/5.jpg"
+    }, {
+      src: "../../images/works/sberbank/6.jpg"
+    }, {
+      src: "../../images/works/sberbank/7.jpg"
+    }, {
+      src: "../../images/works/sberbank/8.jpg"
+    }, {
+      src: "../../images/works/sberbank/9.jpg"
+    }, {
+      src: "../../images/works/sberbank/10.jpg"
+    }, {
+      src: "../../images/works/sberbank/11.jpg"
+    }, {
+      src: "../../images/works/sberbank/12.jpg"
+    }, {
+      src: "../../images/works/sberbank/13.jpg"
+    }, {
+      src: "../../images/works/sberbank/14.jpg"
+    }, {
+      src: "../../images/works/sberbank/15.jpg"
+    }, {
+      src: "../../images/works/sberbank/16.jpg"
+    }, {
+      src: "../../images/works/sberbank/17.jpg"
+    }, {
+      src: "../../images/works/sberbank/18.jpg"
+    }, {
+      src: "../../images/works/sberbank/19.jpg"
+    }, {
+      src: "../../images/works/sberbank/20.jpg"
+    }, {
+      src: "../../images/works/sberbank/21.jpg"
+    }], {
+      touch: false,
+      loop: true
+    });
+  });
+  $(".js_fancybox-bitbunch").click(function () {
+    $.fancybox.open([{
+      src: "../../images/works/bitbunch/full.jpg"
+    }, {
+      src: "../../images/works/bitbunch/full_tablet.jpg"
+    }, {
+      src: "../../images/works/bitbunch/full_mob.jpg"
+    }], {
+      loop: true,
+      touch: false
+    });
+  });
+})(window.jQuery, window, document);
 
 var nav = {
   item: $(".js_nav-item"),
@@ -165,9 +288,7 @@ function setHeight(section) {
 //     console.log("tsY: "+tsY);
 //     console.log("teX: "+teX);
 //     console.log("teY: "+teY);
-//     if (0) {
-//       return;
-//     } else if (tsX < teX) {
+//     if (tsX < teX) {
 //       if (nav.about.hasClass("js_active")) {
 //         scrollToSection(3);
 //         nav.about.removeClass("js_active");
@@ -373,7 +494,37 @@ function setHeight(section) {
 
 (function ($, window, document) {
   $(function () {
-    //show content after loaded page
+    $("head").prepend('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />');
+  });
+})(window.jQuery, window, document);
+
+(function ($, window, document) {
+  function gallery() {
+    var _ref;
+
+    $(".js_works-page--slider").slick({
+      infinite: true,
+      speed: 700,
+      slidesToShow: 3,
+      lazyLoad: "ondemand",
+      slidesToScroll: 1,
+      responsive: [(_ref = {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2
+        }
+      }, _defineProperty(_ref, "breakpoint", 640), _defineProperty(_ref, "settings", {
+        slidesToShow: 1
+      }), _ref)]
+    });
+  }
+
+  $(function () {
+    if ($(window).width() > 640) {
+      gallery();
+    } //show content after loaded page
+
+
     $("body").css("opacity", "1");
   });
 })(window.jQuery, window, document);

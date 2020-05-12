@@ -27,9 +27,7 @@
 //     console.log("teX: "+teX);
 //     console.log("teY: "+teY);
 
-//     if (0) {
-//       return;
-//     } else if (tsX < teX) {
+//     if (tsX < teX) {
 //       if (nav.about.hasClass("js_active")) {
 //         scrollToSection(3);
 //         nav.about.removeClass("js_active");

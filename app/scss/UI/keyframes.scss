@@ -85,60 +85,75 @@
     opacity: 1;
   }
 }
-@keyframes logo_border {
+// @keyframes logo_border {
+//   0% {
+//     border-color: $blue $white $blue $blue;
+//     box-shadow: inset 0 0 8px 1px rgba($white, 0.3);
+//   }
+//   25% {
+//     border-color: $white $blue $white $white;
+//     box-shadow: inset 0 0 8px 1px $blue;
+//   }
+//   50% {
+//     border-color: $blue $white $blue $blue;
+//     box-shadow: inset 0 0 8px 1px rgba($white, 0.3);
+//   }
+//   75% {
+//     border-color: $white $blue $white $white;
+//     box-shadow: inset 0 0 8px 1px $blue;
+//   }
+//   100% {
+//     border-color: $blue $white $blue $blue;
+//     box-shadow: inset 0 0 8px 1px rgba($white, 0.3);
+//   }
+// }
+// @keyframes logo_paragraph {
+//   0% {
+//     color: $white;
+//   }
+//   25% {
+//     color: $blue;
+//   }
+//   50% {
+//     color: $white;
+//   }
+//   75% {
+//     color: $blue;
+//   }
+//   100% {
+//     color: $white;
+//   }
+// }
+// @keyframes logo_span {
+//   0% {
+//     color: $blue;
+//   }
+//   25% {
+//     color: $white;
+//   }
+//   50% {
+//     color: $blue;
+//   }
+//   75% {
+//     color: $white;
+//   }
+//   100% {
+//     color: $blue;
+//   }
+// }
+
+@keyframes logo {
   0% {
-    border-color: $blue $white $blue $blue;
-    box-shadow: inset 0 0 8px 1px rgba($white, 0.3);
-  }
-  25% {
     border-color: $white $blue $white $white;
-    box-shadow: inset 0 0 8px 1px $blue;
-  }
-  50% {
-    border-color: $blue $white $blue $blue;
-    box-shadow: inset 0 0 8px 1px rgba($white, 0.3);
-  }
-  75% {
-    border-color: $white $blue $white $white;
-    box-shadow: inset 0 0 8px 1px $blue;
-  }
-  100% {
-    border-color: $blue $white $blue $blue;
-    box-shadow: inset 0 0 8px 1px rgba($white, 0.3);
-  }
-}
-@keyframes logo_paragraph {
-  0% {
-    color: $white;
   }
   25% {
-    color: $blue;
+    border-color: $white $white $blue $white;
   }
   50% {
-    color: $white;
+    border-color: $white $white $white $blue;
   }
   75% {
-    color: $blue;
-  }
-  100% {
-    color: $white;
-  }
-}
-@keyframes logo_span {
-  0% {
-    color: $blue;
-  }
-  25% {
-    color: $white;
-  }
-  50% {
-    color: $blue;
-  }
-  75% {
-    color: $white;
-  }
-  100% {
-    color: $blue;
+    border-color: $blue $white $white $white;
   }
 }
 
@@ -150,17 +165,6 @@
   to {
     width: 100%;
   }
-}
-
-/*  Анимация Логтотипа*/
-.animation-logo--border {
-  animation: logo_border 25s linear 0s infinite;
-}
-.animation-logo--paragraph {
-  animation: logo_paragraph 25s linear 0s infinite;
-}
-.animation-logo--span {
-  animation: logo_span 25s linear 0s infinite;
 }
 
 /*  Анимации для секции "Обо Мне"*/
