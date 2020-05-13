@@ -146,9 +146,7 @@ img { width: 100%; max-width: 100%; object-fit: cover; }
 
 img[data-object-fit="cover"] { object-fit: cover; }
 
-.wrapper-page { display: flex; flex-direction: column; overflow: hidden; }
-
-@media (min-width: 640px) { .wrapper-page { min-height: 100vh; } }
+.wrapper-page { display: flex; flex-direction: column; overflow: hidden; background-color: #324ea3; perspective: 1200px; }
 
 .wrapper-page > * { width: 100%; }
 
@@ -190,27 +188,27 @@ img[data-object-fit="cover"] { object-fit: cover; }
 
 .header-nav li.js_active::after { background-color: #324ea3; left: 0; }
 
-.main-page { position: relative; display: flex; flex-direction: row; transition: 0.75s ease; width: 400vw; }
+.main-page { position: relative; display: flex; flex-direction: row; width: 100vw; height: 100vh; transform-style: preserve-3d; transform: translateZ(-50vh); transition: 1s ease; }
 
-.main-page::after { content: ""; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 0; }
+.main-page--section { box-sizing: border-box; padding-top: 80px; padding-bottom: 30px; background-size: cover !important; position: absolute; width: 100%; height: 100%; }
 
-.main-page--section { width: 100vw; box-sizing: border-box; height: 100%; min-height: 100vh; padding-top: 80px; padding-bottom: 30px; background-size: cover !important; }
+.main-page--section::after { content: ""; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 0; }
 
 @media (min-width: 640px) { .main-page--section { height: 100vh; padding-top: 60px; padding-bottom: 0; min-height: auto; } }
 
-.main-page--section.about-page { background: url(../../images/bg-about--mobile.jpg) center no-repeat; }
+.main-page--section.about-page { background: url(../../images/bg-about--mobile.jpg) center no-repeat; transform: translateZ(50vh); }
 
 @media (min-width: 640px) { .main-page--section.about-page { background: url(../../images/bg-about.jpg) center no-repeat; } }
 
-.main-page--section.works-page { background: url(../../images/bg-works--mobile.jpg) center no-repeat; }
+.main-page--section.works-page { background: url(../../images/bg-works--mobile.jpg) center no-repeat; transform: translateY(50vh) rotateX(270deg); }
 
 @media (min-width: 640px) { .main-page--section.works-page { background: url(../../images/bg-works.jpg) center no-repeat; } }
 
-.main-page--section.costs-page { background: url(../../images/bg-costs--mobile.jpg) center no-repeat; }
+.main-page--section.costs-page { background: url(../../images/bg-costs--mobile.jpg) center no-repeat; transform: translateZ(-50vh) rotateX(180deg); }
 
 @media (min-width: 640px) { .main-page--section.costs-page { background: url(../../images/bg-costs.jpg) center no-repeat; } }
 
-.main-page--section.contacts-page { background: url(../../images/bg-contacts--mobile.jpg) center no-repeat; }
+.main-page--section.contacts-page { background: url(../../images/bg-contacts--mobile.jpg) center no-repeat; transform: translateY(-50vh) rotateX(90deg); }
 
 @media (min-width: 640px) { .main-page--section.contacts-page { background: url(../../images/bg-contacts.jpg) center no-repeat; } }
 
@@ -505,43 +503,15 @@ img[data-object-fit="cover"] { object-fit: cover; }
 .js_animation-about .about-page--content .about-content--skills span:nth-child(10) { animation-delay: 2.5s; }
 
 /*  Анимации для секции "Мои Работы"*/
-.js_animation-works .works-page--project { opacity: 0; }
+.js_animation-works .slick-slide { animation: fade-in 0.3s linear 1.2s forwards; opacity: 0; }
 
-.js_animation-works .works-page--project:nth-of-type(1) { animation: fade-in 0.1s linear 0.1s forwards; }
+.js_animation-works .slick-current { animation: fade-in 0.3s linear 0.8s forwards; }
 
-.js_animation-works .works-page--project:nth-of-type(2) { animation: fade-in 0.1s linear 0.2s forwards; }
+.js_animation-works .slick-current + .slick-slide { animation: fade-in 0.3s linear 0.4s forwards; }
 
-.js_animation-works .works-page--project:nth-of-type(3) { animation: fade-in 0.1s linear 0.3s forwards; }
+.js_animation-works .slick-next { opacity: 0; animation: fade-in 0.3s linear 1.2s forwards; }
 
-.js_animation-works .works-page--project:nth-of-type(4) { animation: fade-in 0.1s linear 0.4s forwards; }
-
-.js_animation-works .works-page--project:nth-of-type(5) { animation: fade-in 0.1s linear 0.5s forwards; }
-
-.js_animation-works .works-page--project:nth-of-type(6) { animation: fade-in 0.1s linear 0.6s forwards; }
-
-.js_animation-works .works-page--project:nth-of-type(7) { animation: fade-in 0.1s linear 0.7s forwards; }
-
-.js_animation-works .works-page--project:nth-of-type(8) { animation: fade-in 0.1s linear 0.8s forwards; }
-
-.js_animation-works .works-page--project:nth-of-type(9) { animation: fade-in 0.1s linear 0.9s forwards; }
-
-.js_animation-works .works-page--project:nth-of-type(10) { animation: fade-in 0.1s linear 0.9s forwards; }
-
-@media (min-width: 640px) { .js_animation-works .works-page--project:nth-of-type(1) { animation: fade-in 0.2s linear 0.2s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(2) { animation: fade-in 0.2s linear 0.4s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(3) { animation: fade-in 0.2s linear 0.6s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(4) { animation: fade-in 0.2s linear 1.2s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(5) { animation: fade-in 0.2s linear 1s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(6) { animation: fade-in 0.2s linear 0.8s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(7) { animation: fade-in 0.2s linear 1.4s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(8) { animation: fade-in 0.2s linear 1.6s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(9) { animation: fade-in 0.2s linear 1.8s forwards; } }
-
-@media (min-width: 960px) { .js_animation-works .works-page--project:nth-of-type(10), .js_animation-works .works-page--project:nth-of-type(1) { animation: fade-in 0.2s linear 0.2s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(9), .js_animation-works .works-page--project:nth-of-type(2) { animation: fade-in 0.2s linear 0.4s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(8), .js_animation-works .works-page--project:nth-of-type(3) { animation: fade-in 0.2s linear 0.6s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(7), .js_animation-works .works-page--project:nth-of-type(4) { animation: fade-in 0.2s linear 0.8s forwards; }
-  .js_animation-works .works-page--project:nth-of-type(6), .js_animation-works .works-page--project:nth-of-type(5) { animation: fade-in 0.2s linear 1s forwards; } }
+.js_animation-works .slick-prev { opacity: 0; animation: fade-in 0.3s linear 0.8s forwards; }
 
 /*  Анимации для секции "Расценки"*/
 .js_animation-costs p { opacity: 0; animation: fade-in 0.2s linear 0.2s forwards; }
@@ -734,7 +704,7 @@ input.error:focus ~ label.error { display: none !important; }
 @media (min-width: 1070px) { .slick-arrow.slick-prev { left: 26%; } }
 
 @media screen and (max-width: 960px) and (orientation: landscape) { footer, header, section { display: none !important; }
-  main { background-color: #324ea3; background-image: url(../../images/mobile-orientation.png); background-position: center; background-repeat: no-repeat; background-size: 20%; width: 100vw !important; height: 100vh !important; transform: none !important; }
+  main { background-color: #324ea3; padding: 0; width: 100% !important; background-image: url(../../images/mobile-orientation.png); background-position: center; background-repeat: no-repeat; background-size: 20%; width: 100vw !important; height: 100vh !important; transform: none !important; }
   main::after { content: none !important; } }
 
 /* purgecss end ignore */

@@ -4,9 +4,50 @@
   section {
     display: none !important;
   }
-
   main {
     background-color: $blue;
+    padding: 0;
+    width: 100% !important;
+
+    // .scene {
+    //   perspective: 1200px;
+    // }
+    // .cube {
+    //   position: relative;
+    //   width: 100vw;
+    //   height: 100vh;
+    //   transform-style: preserve-3d;
+    //   transform: translateZ(-250px) translateZ(-50vh);
+    //   transition: 1s ease;
+    //   transition-delay: transform 2s;
+    //   // animation: tor 5s linear 0s infinite;
+    // }
+
+    // .side {
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    // }
+
+    // .back {
+    //   transform: translateZ(-50vw) rotateX(0) matrix(-1, 0, 0, 1, 0, 0);
+    //   background-color: black;
+    // }
+
+    // .left {
+    //   transform: translateX(-50vw) rotateY(90deg) matrix(-1, 0, 0, 1, 0, 0);
+    //   background-color: orange;
+    // }
+    // .right {
+    //   transform: translateX(50vw) rotateY(270deg) matrix(-1, 0, 0, 1, 0, 0);
+    //   background-color: red;
+    // }
+
+    // .front {
+    //   transform: translateZ(50vw);
+    //   background-color: green;
+    // }
+
     background-image: url(../../images/mobile-orientation.png);
     background-position: center;
     background-repeat: no-repeat;

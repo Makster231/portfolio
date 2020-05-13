@@ -148,9 +148,9 @@ var pages = {
   contacts: $(".js_page-contacts")
 };
 
-function scrollToSection(count) {
+function rotateToSection(count) {
   pages.main.css({
-    transform: "translateX(-" + count * $(window).width() + "px)"
+    transform: "translateZ(-50vh) rotateX(" + count * 90 + "deg)"
   });
 }
 
@@ -196,7 +196,7 @@ function setHeight(section) {
 
     if (delta < 0) {
       if (nav.about.hasClass("js_active")) {
-        scrollToSection(3);
+        rotateToSection(3);
         nav.about.removeClass("js_active");
         nav.contacts.addClass("js_active");
         pages.contacts.addClass("js_animation-contacts");
@@ -204,7 +204,7 @@ function setHeight(section) {
       }
 
       if (nav.works.hasClass("js_active")) {
-        scrollToSection(0);
+        rotateToSection(0);
         nav.works.removeClass("js_active");
         nav.about.addClass("js_active");
         pages.about.addClass("js_animation-about");
@@ -212,7 +212,7 @@ function setHeight(section) {
       }
 
       if (nav.costs.hasClass("js_active")) {
-        scrollToSection(1);
+        rotateToSection(1);
         nav.costs.removeClass("js_active");
         nav.works.addClass("js_active");
         pages.works.addClass("js_animation-works");
@@ -220,7 +220,7 @@ function setHeight(section) {
       }
 
       if (nav.contacts.hasClass("js_active")) {
-        scrollToSection(2);
+        rotateToSection(2);
         nav.contacts.removeClass("js_active");
         nav.costs.addClass("js_active");
         pages.costs.addClass("js_animation-costs");
@@ -228,7 +228,7 @@ function setHeight(section) {
       }
     } else {
       if (nav.about.hasClass("js_active")) {
-        scrollToSection(1);
+        rotateToSection(1);
         nav.about.removeClass("js_active");
         nav.works.addClass("js_active");
         pages.works.addClass("js_animation-works");
@@ -236,7 +236,7 @@ function setHeight(section) {
       }
 
       if (nav.works.hasClass("js_active")) {
-        scrollToSection(2);
+        rotateToSection(2);
         nav.works.removeClass("js_active");
         nav.costs.addClass("js_active");
         pages.costs.addClass("js_animation-costs");
@@ -244,7 +244,7 @@ function setHeight(section) {
       }
 
       if (nav.costs.hasClass("js_active")) {
-        scrollToSection(3);
+        rotateToSection(3);
         nav.costs.removeClass("js_active");
         nav.contacts.addClass("js_active");
         pages.contacts.addClass("js_animation-contacts");
@@ -252,7 +252,7 @@ function setHeight(section) {
       }
 
       if (nav.contacts.hasClass("js_active")) {
-        scrollToSection(0);
+        rotateToSection(0);
         nav.contacts.removeClass("js_active");
         nav.about.addClass("js_active");
         pages.about.addClass("js_animation-about");
@@ -290,28 +290,28 @@ function setHeight(section) {
 //     console.log("teY: "+teY);
 //     if (tsX < teX) {
 //       if (nav.about.hasClass("js_active")) {
-//         scrollToSection(3);
+//         rotateToSection(3);
 //         nav.about.removeClass("js_active");
 //         nav.contacts.addClass("js_active");
 //         pages.contacts.addClass("js_animation-contacts");
 //         return;
 //       }
 //       if (nav.works.hasClass("js_active")) {
-//         scrollToSection(0);
+//         rotateToSection(0);
 //         nav.works.removeClass("js_active");
 //         nav.about.addClass("js_active");
 //         pages.about.addClass("js_animation-about");
 //         return;
 //       }
 //       if (nav.costs.hasClass("js_active")) {
-//         scrollToSection(1);
+//         rotateToSection(1);
 //         nav.costs.removeClass("js_active");
 //         nav.works.addClass("js_active");
 //         pages.works.addClass("js_animation-works");
 //         return;
 //       }
 //       if (nav.contacts.hasClass("js_active")) {
-//         scrollToSection(2);
+//         rotateToSection(2);
 //         nav.contacts.removeClass("js_active");
 //         nav.costs.addClass("js_active");
 //         pages.costs.addClass("js_animation-costs");
@@ -319,28 +319,28 @@ function setHeight(section) {
 //       }
 //     } else {
 //       if (nav.about.hasClass("js_active")) {
-//         scrollToSection(1);
+//         rotateToSection(1);
 //         nav.about.removeClass("js_active");
 //         nav.works.addClass("js_active");
 //         pages.works.addClass("js_animation-works");
 //         return;
 //       }
 //       if (nav.works.hasClass("js_active")) {
-//         scrollToSection(2);
+//         rotateToSection(2);
 //         nav.works.removeClass("js_active");
 //         nav.costs.addClass("js_active");
 //         pages.costs.addClass("js_animation-costs");
 //         return;
 //       }
 //       if (nav.costs.hasClass("js_active")) {
-//         scrollToSection(3);
+//         rotateToSection(3);
 //         nav.costs.removeClass("js_active");
 //         nav.contacts.addClass("js_active");
 //         pages.contacts.addClass("js_animation-contacts");
 //         return;
 //       }
 //       if (nav.contacts.hasClass("js_active")) {
-//         scrollToSection(0);
+//         rotateToSection(0);
 //         nav.contacts.removeClass("js_active");
 //         nav.about.addClass("js_active");
 //         pages.about.addClass("js_animation-about");
@@ -361,14 +361,14 @@ function setHeight(section) {
 
       if ($this.is(nav.about)) {
         setHeight($(".js_page-about"));
-        scrollToSection(0);
+        rotateToSection(0);
         pages.about.addClass("js_animation-about");
       } else {
         pages.about.removeClass("js_animation-about");
       }
 
       if ($this.is(nav.works)) {
-        scrollToSection(1);
+        rotateToSection(1);
         pages.works.addClass("js_animation-works");
         setHeight($(".js_page-works"));
       } else {
@@ -377,7 +377,7 @@ function setHeight(section) {
 
       if ($this.is(nav.costs)) {
         setHeight($(".js_page-costs"));
-        scrollToSection(2);
+        rotateToSection(2);
         pages.costs.addClass("js_animation-costs");
       } else {
         pages.costs.removeClass("js_animation-costs");
@@ -385,7 +385,7 @@ function setHeight(section) {
 
       if ($this.is(nav.contacts)) {
         setHeight($(".js_page-contacts"));
-        scrollToSection(3);
+        rotateToSection(3);
         pages.contacts.addClass("js_animation-contacts");
       } else {
         pages.contacts.removeClass("js_animation-contacts");

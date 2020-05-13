@@ -14,9 +14,9 @@ const pages = {
   contacts: $(".js_page-contacts"),
 };
 
-function scrollToSection(count) {
+function rotateToSection(count) {
   pages.main.css({
-    transform: "translateX(-" + count * $(window).width() + "px)",
+    transform: "translateZ(-50vh) rotateX(" + count * 90 + "deg)",
   });
 }
 
