@@ -43,9 +43,13 @@
     }
 
     @media (max-width: $md) {
-      height: 150px;
+      height: 180px;
       margin-bottom: 25px;
       width: 100%;
+    }
+
+    @media (max-width: 360px) {
+      height: 150px;
     }
 
     img {

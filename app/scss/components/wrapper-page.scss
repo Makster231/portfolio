@@ -4,12 +4,9 @@
   overflow: hidden;
   background-color: $blue;
 
-
-  perspective: 1200px;
-
-  // @media (min-width: $md) {
-  //   min-height: 100vh;
-  // }
+  .cube-perspective {
+    perspective: 1200px;
+  }
 
   > * {
     width: 100%;

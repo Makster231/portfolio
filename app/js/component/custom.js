@@ -21,7 +21,7 @@
     });
   }
   $(() => {
-    if ($(window).width() > 640) {
+    if (!$is_mobile_size) {
       gallery();
     }
     //show content after loaded page

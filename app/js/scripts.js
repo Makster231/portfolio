@@ -147,18 +147,25 @@ var pages = {
   costs: $(".js_page-costs"),
   contacts: $(".js_page-contacts")
 };
+var $is_mobile_size = $(window).width() < 640;
 
 function rotateToSection(count) {
-  pages.main.css({
-    transform: "translateZ(-50vh) rotateX(" + count * 90 + "deg)"
-  });
+  if ($is_mobile_size) {
+    pages.main.css({
+      transform: "translateZ(-50vw) rotateY(" + count * 90 + "deg)"
+    });
+  } else {
+    pages.main.css({
+      transform: "translateZ(-50vh) rotateX(" + count * 90 + "deg)"
+    });
+  }
 }
 
 function setHeight(section) {
-  if ($(window).width() < 640) {
+  if ($is_mobile_size) {
     $(document).scrollTop(0);
-    $("#js_body, .js_wrapper-page").css({
-      "max-height": section.outerHeight() + 30
+    $("#js_body, .js_wrapper-page, section").css({
+      "max-height": section.outerHeight()
     });
   }
 }
@@ -523,7 +530,7 @@ function setHeight(section) {
   }
 
   $(function () {
-    if ($(window).width() > 640) {
+    if (!$is_mobile_size) {
       gallery();
     } //show content after loaded page
 
