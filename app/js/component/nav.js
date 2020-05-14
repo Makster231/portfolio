@@ -6,7 +6,7 @@
       $this.addClass("js_active");
 
       if ($this.is(nav.about)) {
-        setHeight($(".js_page-about"));
+        setHeight(pages.about, 10);
         rotateToSection(0);
         pages.about.addClass("js_animation-about");
       } else {
@@ -14,15 +14,15 @@
       }
 
       if ($this.is(nav.works)) {
+        setHeight($(".js_works-page--slider"), 110);
         rotateToSection(1);
         pages.works.addClass("js_animation-works");
-        setHeight($(".js_page-works"));
       } else {
         pages.works.removeClass("js_animation-works");
       }
 
       if ($this.is(nav.costs)) {
-        setHeight($(".js_page-costs"));
+        setHeight(pages.costs, 20);
 
         rotateToSection(2);
         pages.costs.addClass("js_animation-costs");
@@ -31,7 +31,7 @@
       }
 
       if ($this.is(nav.contacts)) {
-        setHeight($(".js_page-contacts"));
+        setHeight(pages.contacts, 20);
 
         rotateToSection(3);
         pages.contacts.addClass("js_animation-contacts");
@@ -42,7 +42,7 @@
   }
 
   $(() => {
-    setHeight($(".js_page-about"));
+    setHeight(pages.about, 10);
     navPages();
   });
 })(window.jQuery, window, document);

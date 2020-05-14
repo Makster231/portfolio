@@ -35,11 +35,11 @@ function rotateToSection(count) {
   }
 }
 
-function setHeight(section) {
+function setHeight(section, padding) {
   if ($is_mobile_size) {
-    $(document).scrollTop(0);
-    $("#js_body, .js_wrapper-page, section").css({
-      "max-height": section.outerHeight(),
+    // $(document).scrollTop(0);
+    pages.wrapper.css({
+      "height": section.outerHeight() + padding + "px",
     });
   }
 }

@@ -146,7 +146,7 @@ img { width: 100%; max-width: 100%; object-fit: cover; }
 
 img[data-object-fit="cover"] { object-fit: cover; }
 
-.wrapper-page { display: flex; flex-direction: column; overflow: hidden; background-color: #324ea3; }
+.wrapper-page { display: flex; flex-direction: column; background-color: #324ea3; overflow: hidden; }
 
 .wrapper-page .cube-perspective { perspective: 1200px; }
 
@@ -194,7 +194,7 @@ img[data-object-fit="cover"] { object-fit: cover; }
 
 @media (min-width: 640px) { .main-page { transform: translateZ(-50vh); } }
 
-.main-page--section { box-sizing: border-box; padding-top: 80px; padding-bottom: 30px; background-size: cover !important; position: absolute; width: 100%; min-height: 100%; overflow: scroll; }
+.main-page--section { box-sizing: border-box; padding-top: 80px; padding-bottom: 30px; background-size: cover !important; position: absolute; width: 100%; min-height: 100%; }
 
 @media (min-width: 640px) { .main-page--section { height: 100vh; padding-top: 60px; padding-bottom: 0; min-height: auto; overflow: auto; }
   .main-page--section::after { content: ""; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 0; } }

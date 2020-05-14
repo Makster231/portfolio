@@ -1,12 +1,13 @@
 ﻿.wrapper-page {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   background-color: $blue;
+  overflow: hidden;
 
   .cube-perspective {
     perspective: 1200px;
   }
+
 
   > * {
     width: 100%;
