@@ -2,6 +2,7 @@
   var elem = document.getElementById("js_body");
 
   if (elem.addEventListener) {
+
     if ("onwheel" in document) {
       // IE9+, FF17+
       elem.addEventListener("wheel", onWheel);
@@ -36,6 +37,8 @@
         nav.about.removeClass("js_active");
         nav.contacts.addClass("js_active");
         pages.contacts.addClass("js_animation-contacts");
+
+        
         return;
       }
 
