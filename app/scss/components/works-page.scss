@@ -42,6 +42,11 @@
       width: calc(20% - 15px);
     }
 
+    @media (max-width: $lg) {
+      max-width: 450px;
+      height: 290px;
+    }
+
     @media (max-width: $md) {
       height: 180px;
       margin-bottom: 25px;

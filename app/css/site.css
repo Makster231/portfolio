@@ -263,6 +263,8 @@ img[data-object-fit="cover"] { object-fit: cover; }
 
 @media (max-width: 1168px) and (max-height: 900px) { .works-page--project { height: 220px; width: calc(20% - 15px); } }
 
+@media (max-width: 960px) { .works-page--project { max-width: 450px; height: 290px; } }
+
 @media (max-width: 640px) { .works-page--project { height: 180px; margin-bottom: 25px; width: 100%; } }
 
 @media (max-width: 360px) { .works-page--project { height: 150px; } }
@@ -652,7 +654,7 @@ input.error:focus ~ label.error { display: none !important; }
 
 .slick-loading .slick-track { visibility: hidden; }
 
-.slick-slide { float: left; height: 100%; min-height: 1px; display: none; }
+.slick-slide { float: left; height: 100%; min-height: 1px; text-align: center; display: none; }
 
 [dir="rtl"] .slick-slide { float: right; }
 
@@ -688,11 +690,13 @@ input.error:focus ~ label.error { display: none !important; }
 
 .slick-slide.slick-center:after { opacity: 0; }
 
-.slick-arrow { position: absolute; top: 50%; padding: 0; width: 32px; height: 32px; border: 0; text-indent: -99999px; border-radius: 50%; transition: 0.25s ease-in-out; z-index: 20; background-color: rgba(50, 78, 163, 0.5); background-size: 10px 18px; background-repeat: no-repeat; background-position: center; }
+.slick-arrow { position: absolute; top: calc(50% - 25px); padding: 0; width: 32px; height: 32px; border: 0; text-indent: -99999px; border-radius: 50%; transition: 0.25s ease-in-out; z-index: 20; background-color: rgba(50, 78, 163, 0.5); background-size: 10px 18px; background-repeat: no-repeat; background-position: center; }
 
 .slick-arrow:hover { background-color: #324ea3; }
 
 @media (min-width: 640px) { .slick-arrow { width: 50px; height: 50px; background-size: 15px 28px; } }
+
+@media (min-width: 960px) { .slick-arrow { top: 50%; } }
 
 .slick-arrow.slick-next { right: 15px; transform: translateY(calc(-50%)); background-image: url(../../images/works/arrow-right.svg); }
 
