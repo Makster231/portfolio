@@ -1,16 +1,4 @@
 (function ($, window, document) {
-  function name(name) {
-    return /^(([a-zA-ZÀ-ÿ`']{0,}([.]{1})?[ |.\s|`|'|-][a-zA-ZÀ-ÿ]{1,}){1,})([.]?|[']?|[`]?)[ ]?$/.test(
-      name
-    );
-  }
-
-  function email(email) {
-    return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(
-      email
-    );
-  }
-
   jQuery.validator.setDefaults({
     errorElement: "label",
     errorClass: "error",
@@ -38,12 +26,14 @@
       rules: {
         name: {
           required: true,
+          minlength: 3,
         },
         email: {
           required: true,
         },
+
         textarea: {
-          required: false,
+          required: true,
           minlength: 20,
         },
       },
@@ -56,6 +46,7 @@
           required: "Введите Валидный E-mail",
         },
         textarea: {
+          required: "Введите ваше сообщение",
           minlength: "Введите Как Минимум 20 Знаков",
         },
       },
@@ -79,19 +70,15 @@
       $form_btn.addClass("js_loader").attr("disabled", true);
 
       var data = $form.serialize();
-      setTimeout(function () {
-        $form.addClass("js_form-success");
-      }, 1000);
+
       $.ajax({
         type: "POST",
         url: "./mail.php",
         data: data,
         success: function (msg) {
           if (msg == "OK") {
-            setTimeout(function () {
-              $form.addClass("js_form-success");
-              $form_btn.removeClass("js_loader").attr("disabled", false);
-            }, 1000);
+            $form.addClass("js_form-success");
+            $form_btn.removeClass("js_loader").attr("disabled", false);
           } else {
             alert("Произошла какая-то ошибка, пожалуйста, попробуйте позже");
             $form_btn.removeClass("js_loader").attr("disabled", false);

@@ -185,9 +185,11 @@
   }
 
   .slick-current {
+    opacity: 0;
     animation: fade-in 0.3s linear 0.8s forwards;
     + .slick-slide {
-      animation: fade-in 0.3s linear 0.4s forwards;
+    opacity: 0;
+    animation: fade-in 0.3s linear 0.4s forwards;
     }
   }
 

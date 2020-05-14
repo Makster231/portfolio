@@ -108,7 +108,7 @@
 
         @media (min-width: 640px) {
           bottom: 0;
-          top: unset;
+          top: inherit !important;
         }
       }
 

@@ -24,6 +24,12 @@
     if (!$is_mobile_size) {
       gallery();
     }
+
+    // activate light version of page in IE
+    if (isIE || isEdge) {
+      $(".js_wrapper-page").addClass("js_light-version");
+    }
+
     //show content after loaded page
     $("body").css("opacity", "1");
   });

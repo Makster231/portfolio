@@ -1,12 +1,10 @@
-'use strict';
-
 const gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	browserSync = require('browser-sync'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglifyjs'),
 	cleanCSS = require('gulp-clean-css'),
-	fileinclude = require('gulp-file-include'),
+	rigger = require('gulp-rigger'),
 	del = require('del'),
 	cache = require('gulp-cache'),
 	plumber = require('gulp-plumber'),
@@ -15,26 +13,8 @@ const gulp = require('gulp'),
 	babel = require('gulp-babel'),
 	htmlmin = require('gulp-htmlmin'),
 	replace = require('gulp-replace'),
-	purgecss = require('gulp-purgecss'),
-	version = require('gulp-version-number');
-
-const versionConfig = {
-	'value': '%DT%',
-	'append': {
-		'cover': 1,
-		'key': 'v',
-		'to' : [
-			{
-			'type': 'css',
-			'files': ['site.css']
-			},
-			{
-			'type': 'js',
-			'files': ['scripts.js']
-			},
-		],
-	},
-};
+	browserify = require('gulp-browserify'),
+	purgecss = require('gulp-purgecss');
 
 const path = {
 	dist: {
@@ -54,7 +34,7 @@ const path = {
 		js: './app/js/',
 		jsComponents: './app/js/component/', 
 		images: './app/images/',
-		fonts: './app/fonts/'
+		fonts: './app/fonts/**/*.{ttf,woff,eof,svg}'
 	},
 
 	watch: {
@@ -65,13 +45,16 @@ const path = {
 };
 
 const js_plugins = [
+	path.app.jsComponents + 'vars.js',
 	path.app.jsComponents + 'object-fit-polyfill.js',
 	path.app.jsComponents + 'fancybox-init.js',
-	path.app.jsComponents + 'vars.js',
-	path.app.jsComponents + 'page_scroll.js',
-	path.app.jsComponents + 'page_swipe.js',
+
 	path.app.jsComponents + 'nav.js',
+	path.app.jsComponents + 'page_swipe.js',
+	path.app.jsComponents + 'page_rotate.js',
+
 	path.app.jsComponents + 'form.js',
+
 	path.app.jsComponents + 'after-load.js',
 	path.app.jsComponents + 'custom.js',
 ];
@@ -93,10 +76,7 @@ gulp.task('browser-sync', () => { //local host for development
 //Task for Dev:
 gulp.task('html:dev', (done) => { //compile .html pages in ./app (root);
     gulp.src(path.app.htmlViews)
-		.pipe(fileinclude({
-			prefix: '@@',
-			basepath: '@file'
-		}))
+		.pipe(rigger())
 		.pipe(replace(/{{var_path_env}}/g, path.app.root))
         .pipe(gulp.dest('./'))
 		.pipe(browserSync.reload({ stream: true }));
@@ -112,16 +92,20 @@ gulp.task('style:dev', (done) => { //build .css from .scss
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(path.app.style))
 		.pipe(browserSync.reload({stream: true}));
-
 	done();
 });
 
 gulp.task('js:dev', (done) => {
 	gulp.src(js_plugins)
 		.pipe(sourcemaps.init())
-		.pipe(concat('scripts.js'))
+		.pipe(concat('custom.js'))
 		.pipe(babel({
-			presets: ['@babel/preset-env']
+			presets: ['@babel/preset-env'],
+			plugins: ['@babel/transform-runtime']
+		}))
+		.pipe(browserify({
+			insertGlobals : true,
+			debug : true
 		}))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(path.app.js))
@@ -155,18 +139,14 @@ gulp.task('clean:dist', (done) => {
 
 gulp.task('html:prod', (done) => { //copy pages from ./app/*.html
 	gulp.src(path.app.htmlViews)
-		.pipe(fileinclude({
-			prefix: '@@',
-			basepath: '@file'
-		}))
+		.pipe(rigger())
 		.pipe(replace(/{{var_path_env}}/g, path.dist.root))
 		.pipe(htmlmin({
-			collapseWhitespace: true,
+			collapseWhite: true,
 			// minifyJS: true,
 			minifyCSS: true,
 			removeComments: true
 		}))
-		.pipe(version(versionConfig))
 		.pipe(gulp.dest('./'));
 
 	done();
@@ -185,11 +165,17 @@ gulp.task('style:prod', (done) => { //recompile styles from ./app/scss
 	done();
 });
 
+
 gulp.task('js:prod', (done) => { //recompile scripts from ./app/js/components 
 	gulp.src(js_plugins)
-		.pipe(concat('scripts.js'))
+		.pipe(concat('custom.js'))
 		.pipe(babel({
-			presets: ['@babel/preset-env']
+			presets: ['@babel/preset-env'],
+			plugins: ['@babel/transform-runtime']
+		}))
+		.pipe(browserify({
+			insertGlobals : true,
+			debug : false
 		}))
 		.pipe(uglify())
 		.pipe(gulp.dest(path.dist.js));
@@ -199,7 +185,7 @@ gulp.task('js:prod', (done) => { //recompile scripts from ./app/js/components
 
 gulp.task('clear', (callback) => {
 	return cache.clearAll();
-})
+});
 
 gulp.task('build:prod', //build for PROD env
 	gulp.series(

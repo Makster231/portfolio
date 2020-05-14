@@ -6,6 +6,7 @@ const nav = {
   contacts: $(".js_nav-contacts"),
 };
 const pages = {
+  wrapper: $(".js_wrapper-page"),
   main: $(".js_main-page"),
   section: $(".js_main-section"),
   about: $(".js_page-about"),
@@ -15,15 +16,21 @@ const pages = {
 };
 
 let $is_mobile_size = $(window).width() < 640;
+let isIE = /*@cc_on!@*/ false || !!document.documentMode;
+let isEdge = !isIE && !!window.StyleMedia;
 
 function rotateToSection(count) {
   if ($is_mobile_size) {
     pages.main.css({
       transform: "translateZ(-50vw) rotateY(" + count * 90 + "deg)",
     });
-  } else {
+  } else if (!isIE && !isEdge) {
     pages.main.css({
       transform: "translateZ(-50vh) rotateX(" + count * 90 + "deg)",
+    });
+  } else {
+    pages.main.css({
+      transform: "translateX(-" + (count / 2) * $(window).width() + "px)",
     });
   }
 }
